@@ -41,7 +41,7 @@
 }
 
 
-/* ----- BREACRUMB ----- */
+/* ----- BREADCRUMB ----- */
 
 .breadcrumb-custom{
     padding: 2px 15px;
@@ -63,20 +63,46 @@
 /* ----- MAIN ----- */
 
 /* Carousel */
-#myCarousel{
-    height: 300px;
-    overflow: hidden;
+
+
+.carousel-item {
+  min-height: 500px;
+  background: no-repeat center center scroll;
+  background-size: cover;
 }
 
-#myCarousel .carousel-inner .img {
-      height: 100%;
+.carousel-item .carousel-caption{
+    background-color: #bababae6;
+    max-height: none;
+    max-width: 300px;
+    bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.carousel-item .carousel-caption *{
+    color: #0040a0;
+}
+
+.btn-read-more{
+    background-color: #0040a0;
+    border: none;
+}
+
+.btn-read-more{
+    color: #ffffff !important;
+}
+
+.btn-read-more:hover{
+    background-color: #c95000;
 }
 
 
-#myCarousel .carousel-inner .carousel-item .carousel-caption .carousel-link{
-    position: relative;
-    top: 0;
-    color: white;
+
+.carousel-item .carousel-caption h5 a:hover{
+    text-decoration: none;
+    color: #c95000;
 }
 
 
