@@ -36,14 +36,11 @@
         <script>
             $(function(){
                 
-                console.log("I will load the page!");
+                $(".topContent").load("pages/top-content.html"); $(".footer").load("pages/footer.html");
                 
-                $(".topContent").load("pages/top-content.html");
             });
             
-            
         </script>
-        
         
     </head>
 
@@ -52,6 +49,12 @@
         <main role="main" class="container">
         
             <div class="topContent"></div>
+            
+            <nav>
+                <ol class="breadcrumb breadcrumb-custom">
+                    <li class="breadcrumb-item active">Home</li>
+                </ol>
+            </nav>
             
             <div class="row">
             
@@ -101,6 +104,8 @@
             </div>
             
         </main>
+        
+        <div class="footer"></div>
         
     </body>
 </html>
