@@ -18,25 +18,29 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/main.css">
         
-        <link rel="import" href="pages/top-content.html">
-        
-        
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="assets/js/bootstrap.min.js"></script>
         
-        <!-- JavaScript -->
-        <script type="text/javascript" src="assets/js/script.js"></script>
-        
-        
-        
+        <script type= "text/javascript" src="assets/js/script.js"></script>
         
         <script>
+            
             $(function(){
                 
-                $(".topContent").load("pages/top-content.html"); $(".footer").load("pages/footer.html");
+                doIt();
+                
+                $(".topContent").load("pages/top-content.html", function(){
+                    $(".mainContent").load("pages/home.html", function(){ 
+                        $(".footer").load("pages/footer.html", function(){
+                            doIt();
+                        });
+                    });
+                });
+                        
+                                
                 
             });
             
@@ -44,73 +48,12 @@
         
     </head>
 
-    <body id="home">
+    <body>
         
-        <main role="main" class="container">
-        
-            <div class="topContent"></div>
-            
-            <nav>
-                <ol class="breadcrumb breadcrumb-custom">
-                    <li class="breadcrumb-item active">Home</li>
-                </ol>
-            </nav>
-            
-            <div >
-            
-                <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-                
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        
-                        <div class="carousel-item active" style="background-image: url('assets/img/example/ex1.jpg')">
-                            <div class="carousel-caption d-none d-block">
-                                <h5><strong>WHO</strong> we are</h5>
-                                <p>Find out more about us</p>
-                                <a class="btn btn-primary btn-read-more" href="#" role="button">Read more</a>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-item" style="background-image: url('assets/img/example/ex2.jpg')">
-                            <div class="carousel-caption d-none d-block">
-                                <h5><strong>WHAT</strong> we do</h5>
-                                <p>Have a look at the services we offer</p>
-                                <a class="btn btn-primary btn-read-more" href="#" role="button">Read more</a>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-item" style="background-image: url('assets/img/example/ex3.jpg')">
-                            <div class="carousel-caption d-none d-block">
-                                <h5><strong>WHERE</strong> we are active</h5>
-                                <p>Different locations for different needs</p>
-                                <a class="btn btn-primary btn-read-more" href="#" role="button">Read more</a>
-                            </div>
-                        </div>
-                    
-                    </div>
-
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            
-            </div>
-            
-        </main>
-        
+        <div class="topContent"></div>
+        <main class="mainContent"></main>
         <div class="footer"></div>
         
     </body>
+    
 </html>

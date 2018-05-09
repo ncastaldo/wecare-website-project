@@ -1,20 +1,6 @@
+var i = 1;
 
-
-
-
-$(document).ready(function(){
-    
-
-    /* Bootstrap nav active */
-    $(".navbar .nav-link").on("click", function(){
-        $(".nav").find(".active").removeClass("active");
-        $(this).addClass("active");
-    });
-    
-    
-    
-    
-    
-    
-    
-})
+function doIt(){
+    console.log("called "+i+" - "+ Date.now() + " - "+ $("a").length );
+    i++;
+}
