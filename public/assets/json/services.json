@@ -1,0 +1,104 @@
+{ 
+    "services" : [
+
+        {
+
+            "id" : "s001",
+            "image" : "../assets/img/services/s001/001.jpg",
+            "name" : "Music therapy",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/services/s001/001.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s001/002.jpg"
+                }
+            ] 
+
+        },
+        
+        {
+
+            "id" : "s002",
+            "image" : "../assets/img/services/s002/001.jpg",
+            "name" : "Speech therapy",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/services/s0012/001.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s002/002.jpg"
+                }
+            ] 
+            
+        },
+        
+        {
+
+            "id" : "s003",
+            "image" : "../assets/img/services/s003/001.jpg",
+            "name" : "Pshycomotricity",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/services/s003/001.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s003/002.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s003/003.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s003/004.jpg"
+                }
+            ] 
+
+        },
+        
+        {
+
+            "id" : "s004",
+            "image" : "../assets/img/services/s004/001.jpg",
+            "name" : "Psychotherapy",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/services/s004/001.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s004/002.jpg"
+                }
+            ] 
+
+        },
+        
+        {
+
+            "id" : "s005",
+            "image" : "../assets/img/services/s005/001.jpg",
+            "name" : "Physiotherapy",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/services/s005/001.jpg"
+                }
+            ] 
+
+        }
+        
+
+    ]
+}
