@@ -1,0 +1,26 @@
+{ 
+    "locations" : [
+
+        {
+
+            "id" : "l001",
+            "image" : "../assets/img/locations/l001/001.jpg",
+            "name" : "London",
+            "description1" : "This is a cool service",
+            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/locations/l001/001.jpg"
+                }
+            ],
+            "services" : [
+                {
+                    "id" : "s001"
+                }
+            ]
+
+        }
+        
+    ]
+}
