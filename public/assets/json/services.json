@@ -6,15 +6,24 @@
             "id" : "s001",
             "image" : "../assets/img/services/s001/001.jpg",
             "name" : "Music therapy",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
-            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "description1" : "Caring about communication through play.",
+            "description2" : "<p>Music Therapy is the clinical and evidence-based use of music interventions to accomplish individualized goals within a therapeutic relationship by a credentialed professional who has completed an approved music therapy program. Our Music therapists help children and young adults with a wide variety of needs - physical, communicative, emotional, social- in a wide variety of settings, including schools, private practice,  rehabilitation settings, and many others <br> for detailed information, please contact one of our locations.<p>",
+            "practicalInfo" : "<p>Music therapy comes in two different forms: active and receptive. In active therapy, the therapist and patient actively participate in creating music with instruments, their voice, or other objects. This allows for the patient to be creative and expressive through the art of music. Receptive therapy takes place in a more relaxed setting where the therapist plays or makes music to the patient who is free to draw, listen or meditate. Usually our credentialed professionals therapist determine the method.<p>",
             "photogallery" : [
                 {
                     "image" : "../assets/img/services/s001/001.jpg"
                 },
                 {
                     "image" : "../assets/img/services/s001/002.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s001/003.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s001/004.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s001/005.jpg"
                 }
             ] 
 
@@ -24,10 +33,10 @@
 
             "id" : "s002",
             "image" : "../assets/img/services/s002/001.jpg",
-            "name" : "Speech therapy",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
-            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "name" : "Speech and Language Services.",
+            "description1" : "Helping children reach their true potential.",
+            "description2" : "<p>Speech-Language Pathologists at We Care are dedicated to helping an young adult or child improve his/her communication skills in all environments. Speech therapy sessions are designed to meet the unique needs of each individual. Toys, games, puzzles, books, flashcards, and other therapy materials are used to stimulate speech and language development during each treatment session.<p>",
+            "practicalInfo" : "<p>Our sessions are scheduled at 30 or 45 minute sessions and frequency is determined depending on the need of each individual child as a team with the family. <p>",
             "photogallery" : [
                 {
                     "image" : "../assets/img/services/s0012/001.jpg"
@@ -44,9 +53,9 @@
             "id" : "s003",
             "image" : "../assets/img/services/s003/001.jpg",
             "name" : "Pshycomotricity",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
-            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "description1" : "The game is the best medicine.",
+            "description2" : "<p>Psychomotricity service at We Care is of help to children with lacking cognitive abilities because the playful dimension and the ways in which the child experiences and strengthens these skills are motivating and capable of bringing out the potential. Our therapist create the right mediation through tools that characterize psychomotricity such as body, sensoryity, movement, play, graphic and manipulative production.<p>",
+            "practicalInfo" : "<p>Cognitive therapy for cognitive disorders is one-weekly or two-weekly and is often supplemented with speech therapy and/or pedagogical therapies. <br> The therapist plans interviews with teachers to understand how the child experiences his or her difficulties at school and whether they affect relationships with peers and teachers.<p>",
             "photogallery" : [
                 {
                     "image" : "../assets/img/services/s003/001.jpg"
@@ -59,6 +68,9 @@
                 },
                 {
                     "image" : "../assets/img/services/s003/004.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s003/005.jpg"
                 }
             ] 
 
@@ -69,16 +81,26 @@
             "id" : "s004",
             "image" : "../assets/img/services/s004/001.jpg",
             "name" : "Psychotherapy",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
-            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "description1" : "Today Is Another Day To Improve.",
+            "description2" : "<p>We assist children and young adults who are experiencing anxiety, depression, social isolation, relationship difficulties, family troubles, trauma associated with violence, or have other concerns. Our counseling services are professional and confidential.<p>",
+            "practicalInfo" : "<p>All referrals to the service need to made by a GP through the Mental Health Response Service on 388 4995432<p>",
             "photogallery" : [
                 {
                     "image" : "../assets/img/services/s004/001.jpg"
                 },
                 {
                     "image" : "../assets/img/services/s004/002.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s004/003.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s004/004.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s004/005.jpg"
                 }
+                
             ] 
 
         },
@@ -88,12 +110,27 @@
             "id" : "s005",
             "image" : "../assets/img/services/s005/001.jpg",
             "name" : "Physiotherapy",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
-            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "description1" : "Physiotherapy helps a child function at their maximum potential.",
+            "description2" : "<p>Physiotherapy, is one of the allied health professions that, by using mechanical force and movements (bio-mechanics or kinesiology), manual therapy, exercise therapy, and electrotherapy, remediates impairments and promotes mobility and function. Physical therapy is used to improve a patient's quality of life through examination, diagnosis, prognosis and physical intervention.<br>Our physiotherapists help with the development, rehabilitation, and improvement of movement skills and performance of the child. Moreover work on gross motor skills such as sitting, standing, and walking, as well as improvement in flexibility, strength, and endurance.<p>",
+            "practicalInfo" : "<p>Feel free to contact one of our location for an evalutation visit of your child.<p>",
             "photogallery" : [
                 {
                     "image" : "../assets/img/services/s005/001.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s005/002.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s005/003.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s005/004.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s005/005.jpg"
+                },
+                {
+                    "image" : "../assets/img/services/s005/006.jpg"
                 }
             ] 
 
