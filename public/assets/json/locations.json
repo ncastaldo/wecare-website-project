@@ -6,8 +6,7 @@
             "id" : "l001",
             "image" : "../assets/img/locations/l001/001.jpg",
             "name" : "London",
-            "description1" : "This is a cool service",
-            "description2" : "<p>This is a cool service, but maybe I should say something more, let me escape<br>Now we are talking!<p>",
+            "description" : "<p>In the middle of London there is this building<p>",
             "practicalInfo" : "<p>Now take these practical info!<p>",
             "photogallery" : [
                 {
@@ -17,10 +16,37 @@
             "services" : [
                 {
                     "id" : "s001"
+                },
+                {
+                    "id" : "s002"
+                }
+            ]
+
+        },
+        
+        {
+
+            "id" : "l002",
+            "image" : "../assets/img/locations/l002/001.jpg",
+            "name" : "Rome",
+            "description" : "<p>In the middle of Rome there is this building<p>",
+            "practicalInfo" : "<p>Now take these practical info!<p>",
+            "photogallery" : [
+                {
+                    "image" : "../assets/img/locations/l002/001.jpg"
+                }
+            ],
+            "services" : [
+                {
+                    "id" : "s003"
+                },
+                {
+                    "id" : "s004"
                 }
             ]
 
         }
+        
         
     ]
 }

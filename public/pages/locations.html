@@ -2,34 +2,34 @@
 <html lang="en">
 
     <head>
-
+        
         <title>We care</title>
-
+        
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
-
+        
         <!-- BOOTSTRAP minified CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-
+        
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main.css">
-
+        
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
 
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
-
+        
         <script type= "text/javascript" src="../assets/js/script.js"></script>
-
+        
     </head>
 
     <body>
-
+        
         <!-- HEADER -->
         <div class="container top-content">
 
@@ -60,16 +60,16 @@
                             <a href="home.html" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="who-we-are.html" class="nav-link">Who we are</a>
+                            <a href="whoWeAre.html" class="nav-link">Who we are</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Services</a>
+                            <a href="services.html" class="nav-link">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Locations</a>
+                            <a href="service.html" class="nav-link">Locations</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">People</a>
+                            <a href="people.html" class="nav-link">People</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Events</a>
@@ -89,119 +89,52 @@
 
         </div>
         <!-- /HEADER -->
-
+        
         <!-- MAIN -->
         <main role="main" class="container">
-
+            
             <nav>
                 <ol class="breadcrumb breadcrumb-custom">
-                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="../index.html">All services</a></li>
-                    <li class="breadcrumb-item active SERVICE-NAME"></li> <!-- DYNAMIC HERE -->
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item active">All locations</li>
                 </ol>
             </nav>
-
-            <div class="row">
-
-                <div class= "col-md-3 col-sm-12 pr-md-2">
-
-                    <nav class="hidden-xs-down sidebar">
-                        <ul class="nav nav-tabs flex-column" id="tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="welcome-tab" data-toggle="tab" href="#welcome" role="tab">Welcome</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="practical-info-tab" href="#practical-info" data-toggle="tab" role="tab">Practical info</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="photogallery-tab" href="#photogallery" data-toggle="tab" role="tab">Photogallery</a>
-                            </li>
-                        </ul>
-                    </nav>
-
+            
+            <div class="container">
+                
+                <!-- Intro row -->
+                <h1>Locations</h1>
+                <p>Quo usque tandem, Catilina, abuteris patientia nostra?</p>
+                
+                <div class="row LOCATIONS">
+                    
+                    
+                    <!-- AJAX CALL HERE -->
+                    
+                    
                 </div>
-
-                <div class="col-md-9 col-sm-12 pl-md-0 pt-md-0 pt-sm-2 pt-2">
-                    <div class="tab-content pt-2 pr-3 pb-2 pl-3">
-
-                        <h5 class="SERVICE-NAME"></h5> <!-- DYNAMIC HERE -->
-                        <hr>
-                        <br>
-
-                        <div class="tab-pane active" id="welcome" role="tabpanel">
-
-                            <h3>What is it?</h3>
-
-
-                            <div>
-                                <p class="SERVICE-IMAGE"></p>
-                                <div class="SERVICE-DESCRIPTION"></div>
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane" id="practical-info" role="tabpanel">
-
-                            <h3>In practice</h3>
-                            <div class="SERVICE-PRACTICAL-INFO"></div>
-
-                        </div>
-
-
-                        <div class="tab-pane container " id="photogallery" role="tabpanel">
-
-                            <h3>Some photos</h3>
-
-                            <div class="row SERVICE-PHOTOGALLERY">
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
+                
+                
             </div>
-
-            <hr>
-
-            <h6 class="mt-3 mb-3">Go to the <div class="btn btn-primary pt-1">people</div> that offer this service</h6>
-
-
-            <hr>
-
-            <h6 class="mt-3 mb-3">Check the <b>locations</b> of this service:</h6>
-
-            <div class="row">
-
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4 text-center">
-                    <a class="card" href="home.html">
-                        <img class="card-img-top" src="../assets/img/locations/l001/001.jpg">
-                        <h5 class="card-title pt-2 link-custom">London</h5>
-                    </a>
-                </div>
-
-            </div>
-
-            <br>
-
-            <script src="../assets/js/service.js"></script>
-
-
+            
+            <!-- Easier to put it here, correct? -->
+            <script type= "text/javascript" src="../assets/js/locations.js"></script>
+            
         </main>
         <!-- /MAIN -->
-
+        
+        
+        
+        
         <!-- FOOTER -->
         <footer class="footer footer-custom">
-
+            
             <div class="container">
-
+                
                 <nav class="navbar navbar-footer-custom navbar-expand">
-
+                
                     <div class="navbar-nav mr-auto">
-
+                    
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a href="#" class="fa fa-facebook"></a>
@@ -213,13 +146,13 @@
                                 <a href="#" class="fa fa-instagram"></a>
                             </li>
                         </ul>
-
+                
                     </div>   
-
+                    
                     <div class="navbar-nav ml-auto">
-
+                        
                         <ul class="navbar-nav">
-
+                            
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Home</a>
                             </li>
@@ -231,14 +164,14 @@
                             </li>
                         </ul>
                     </div>    
-
+                    
                 </nav>
-
+            
             </div>
-
+            
         </footer>
         <!-- /FOOTER -->
-
+        
     </body>
-
+    
 </html>
