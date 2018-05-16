@@ -5,14 +5,11 @@
             "firstname": "Meredith",
             "lastname": "Gray",
             "image": "../assets/img/people/p001.jpg",
-            "profession": "Nurse",
-            "description": "<p>I always work a lot<br>I will help you</p>",
+            "profession": "Music Therapist",
+            "description": "<p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p>",
             "services": [
                 {
                     "id": "s001"
-                },
-                {
-                    "id": "s002"
                 }
             ]
         },
@@ -21,11 +18,11 @@
             "firstname": "Derek",
             "lastname": "Tucker",
             "image": "../assets/img/people/p002.jpg",
-            "profession": "Speech therapist",
-            "description": "<p>I always work a lot<br>I will help you</p>",
+            "profession": "Speech Therapist",
+            "description": "<p>Derek is a specialist in speech therapy.  At We Care Derek help our petients with different kinds of speech difficulties as well as language issues like dyslexia and dyspraxia. </p>",
             "services": [
                 {
-                    "id": "s003"
+                    "id": "s002"
                 }
             ]
         },
