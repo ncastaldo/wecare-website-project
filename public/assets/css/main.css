@@ -183,7 +183,7 @@ a:hover .link-custom{
 
 
 
-/* ----- SERVICE ----- */
+/* ----- SERVICE + LOCATION ----- */
 
 .sidebar {
     background-color: #e9ecef !important;
@@ -193,10 +193,6 @@ a:hover .link-custom{
     color: #ff6600 !important;
     /*box-shadow: inset 0 -3px #ff6600; /* to have the line effect*/
     background-color: inherit! important;
-}
-
-.tab-content {
-    
 }
 
 
