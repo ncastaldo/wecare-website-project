@@ -1,20 +1,20 @@
 $(document).ready(function(){
     
-    $.ajax({
+    getData().done(loadData);
+    
+});
+
+function getData(){
+    
+    return $.ajax({
         method: "GET",
         dataType: "json",
         url: "/assets/json/services.json", //SERVER URL
-        
-        success: function (response) {
-            console.log(response); //LOG RESPONSE
-            loadData(response); //LOAD THE RESPONSE DATA IN HTML
-        },
         error: function (request, error) {
             console.log(request, error);
         }
     });
-    
-});
+}
                   
                 
 function loadData(json){

@@ -1,30 +1,47 @@
 $(document).ready(function(){
     
-    $.ajax({
+    getData().done(loadData);
+    
+});
+
+function getData(){
+    
+    return $.ajax({
         method: "GET",
         dataType: "json",
         url: "/assets/json/people.json", //SERVER URL
-        
-        success: function (response) {
-            console.log(response); //LOG RESPONSE
-            loadData(response); //LOAD THE RESPONSE DATA IN HTML
-        },
         error: function (request, error) {
             console.log(request, error);
         }
     });
     
-});
+}
+
                   
                 
 function loadData(json){
     
     console.log(json);
-    var el = "";
+    let el = "";
     
-    for (let i = 0; i < json.people.length; i++) {
+    console.log(json.people)
+    
+    let sortedPeople = json.people;
+    
+    //Sort people by alphabetical order
+    sortedPeople.sort(function(a,b){ 
+        if(a.lastname < b.lastname) return -1;
+        if(a.lastname > b.lastname) return +1;
+        if(a.firstname < b.firstname) return -1;
+        if(a.firstname > b.firstname) return +1;
+        return 0;
+    });
+    
+    console.log(sortedPeople);
+    
+    for (let i = 0; i < sortedPeople.length; i++) {
         
-        let person = json.people[i];
+        let person = sortedPeople[i];
         
         console.log(person.id);
         

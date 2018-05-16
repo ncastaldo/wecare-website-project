@@ -1,28 +1,24 @@
+var serviceId;
+
 $(document).ready(function(){
     
-    $.ajax({
-        method: "GET",
-        dataType: "json",
-        url: "/assets/json/services.json", //SERVER URL
-        //RETRIEVING ALL SERVICES - no rest implemented with query
-        success: function (response) {
-            console.log(response); //LOG RESPONSE
-            loadData(response); //LOAD THE RESPONSE DATA IN HTML
-        },
-        error: function (request, error) {
-            console.log(request, error);
-        }
+    $.getScript("/assets/js/services.js",function(){
+        getData().done(loadServiceData);
     });
     
 });
 
-function loadData(json){
+
+//LOAD THE RESPONSE DATA IN HTML
+function loadServiceData(json){
     
     for (let j = 0; j < json.services.length; j++) {
     
         if(URL.id === json.services[j].id){
             
             let service = json.services[j];
+            
+            serviceId = service.id;
             
             $(".SERVICE-NAME").text(service.name);
             $(".SERVICE-DESCRIPTION").html(service.description2);
@@ -37,7 +33,39 @@ function loadData(json){
             
         }
     
+    }   
+    
+    $.getScript("/assets/js/locations.js",function(){
+        getData().done(loadRelatedLocations);
+    });
+    
+}
+
+function loadRelatedLocations(json){
+    
+    let el = "";
+    console.log(json);
+
+    for (let j = 0; j < json.locations.length; j++) {
+    
+        let location = json.locations[j];
+        
+        for(let i = 0; i<location.services.length; i++){
+            
+            if(location.services[i].id === serviceId){
+                
+                //TODO HREF
+                
+                el +='<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4 text-center"><a class="card" href="location.html?id='+location.id+'"><img class="card-img-top" src="'+location.image+'"><h5 class="card-title pt-2 link-custom">'+location.name+'</h5></a></div>'
+                
+                
+            }
+            
+        }
+        
     }
+    
+    $(".RELATED-LOCATIONS").append(el);
     
 }
 
