@@ -19,7 +19,7 @@
             "lastname": "Tucker",
             "image": "../assets/img/people/p002.jpg",
             "profession": "Speech Therapist",
-            "description": "<p>Derek is a specialist in speech therapy.  At We Care Derek help our petients with different kinds of speech difficulties as well as language issues like dyslexia and dyspraxia. </p>",
+            "description": "<p>Derek is a specialist in speech and language therapy.  At We Care Derek helps our petients with different kinds of speech difficulties as well as language issues like dyslexia and dyspraxia.</p> Dereke has received many rewards in various works to prevent, assess, diagnose, and treat speech, language, social communication, cognitive-communication, and swallowing disorders in children and young adults. we are proud to have him on board.</p>",
             "services": [
                 {
                     "id": "s002"
@@ -31,8 +31,8 @@
             "firstname": "Amara",
             "lastname": "Johnson",
             "image": "../assets/img/people/p003.jpg",
-            "profession": "Music therapist",
-            "description": "<p>I always work a lot<br>I will help you</p>",
+            "profession": "Music Therapist and Physiotherapist",
+            "description": "<p>Johnson has a double degree in Music therapy and pysiotherapy. At We Care he works both as Music Therapist and Pysiotherapist.</p>",
             "services": [
                 {
                     "id": "s001"
@@ -47,8 +47,8 @@
             "firstname": "Song",
             "lastname": "Wang",
             "image": "../assets/img/people/p004.jpg",
-            "profession": "Psychologist",
-            "description": "<p>I always work a lot<br>I will help you</p>",
+            "profession": "Psychologist and Psycho",
+            "description": "<p>Dr. Wang is specialised both in Pychotherapy and psychomotricity. Dr Wang helps children and young adults with deficient in psychomotor retardation. He creates the right mediation through tools that characterize psychomotricity such as body, sensoryity, movement, play, graphic and manipulative production. </p>",
             "services": [
                 {
                     "id": "s003"
@@ -64,13 +64,10 @@
             "lastname": "Moneta",
             "image": "../assets/img/people/p005.jpg",
             "profession": "Child psychiatrist",
-            "description": "<p>I always work a lot<br>I will help you</p>",
+            "description": "<p>Dr. Moneta graduated as a medical doctor (M.D) and continued his education to obtain a Ph. D in Psychology. Mario started teaching and providing therapy as an Assistant Professor in the Department of Clinical Psychology with a focus on CBT & DBT. He founded the Norwegian Mental Health Centre in 2015 where he provided therapy and counseling for children and young adults.</p>",
             "services": [
                 {
-                    "id": "s002"
-                },
-                {
-                    "id": "s003"
+                    "id": "s004"
                 }
             ]
         }
