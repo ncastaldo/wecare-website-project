@@ -3,9 +3,10 @@
     {
         
         "id" : 1,
-        "name" : "London",
+        "city" : "London",
+        "name" : "Westminster Center",
         "image" : "../assets/img/locations/l001/001.jpg",
-        "description" : " At Westminster Center, with our specialised team, the focus is given Music Therapy & Speech and Language Services.",
+        "description" : " At Westminster Center, with our specialised team, the focus is given Music Therapy & Speech and Language Services. <p> The Center is open from Monday to Friday from 0900 to 1700.",
         "practicalInfo" : "<p>Westminster Center is located in the heart of London. </p> The modality of access: This is possible through appointment requested via either email of telephon. The contacts are linked below.<p>",
         "contactperson" : "<p>Charles Blackwood<p>",
         "address" : "North Mews, London WC1N 2JP, UK",
@@ -17,9 +18,10 @@
     {
 
         "id" : 2,
-        "name" : "Roma",
+        "city" : "Roma",
+        "name" : "Colosseo Care Center",
         "image" : "../assets/img/locations/l002/001.jpg",
-        "description" : "<p>Colosseo Care Center is one of We Care locations located in the heart of Rome. </p> <p>Services offered at this  location are <b> Music Therapy </b> and </b> Psychotherapy </b>. <p>",
+        "description" : "<p>Colosseo Care Center is one of We Care locations located in the heart of Rome. </p> <p>Services offered at this  location are <b> Music Therapy </b> and </b> Psychotherapy </b>.<p> The Center is open from Monday to Friday from 0900 to 1700. </p>",
         "practicalInfo" : " <p> The modality to access the location is through the application sent via email..",
         "contactperson" : "<p><b>Simona Bergamasci</b>",
         "address" : "Via di Monte del Gallo, 113, 00165 Roma",
@@ -31,9 +33,10 @@
     {
 
         "id" : 3,
-        "name" : "Oslo",
+        "city" : "Oslo",
+        "name" : "Bygdøy Children Center",
         "image" : "../assets/img/locations/l003/001.jpg",
-        "description" : "<p> Bygdøy Children Center offers Psychotherapy and Pshycomotricity services to childre and young adult<p>",
+        "description" : "<p> Bygdøy Children Center offers Psychotherapy and Pshycomotricity services to childre and young adult</p> <p> The Center is open from Monday to Friday from 0900 to 1600.",
         "practicalInfo" : "<p> This center is accessible through an appointment. The specialist will valuate your child and follow up the case. For more information please reffer to the contacts below.<p>",
         "contactperson" : "<p> Hilde Johansen",
         "address" : "Gabels gate 16, 0272 Oslo, Norway",
@@ -45,9 +48,10 @@
     {
 
         "id" : 4,
-        "name" : "København",
+        "city" : "London",
+        "name" : "København Children Multisevice Center",
         "image" : "../assets/img/locations/l004/001.jpg",
-        "description" : "<p>København Children Multisevice Center offers Music Therapy and Physiotherapy services to childre  and young adults. The center was built in March 2018 and is located at 15 km off the city of Copenhagen. <p>",
+        "description" : "<p>København Children Multisevice Center offers Music Therapy and Physiotherapy services to childre  and young adults. The center was built in March 2018 and is located at 15 km off the city of Copenhagen. </p> <p> The Center is open from Monday to Friday from 0900 to 1700.",
         "practicalInfo" : "<p>The center recieves and help children in need of these services. For more information on how to access the services, please contact us.<p>",
         "contactperson" : "Robert Amash ",
         "address" : "Colbjørnsensgade 11, 1652 København V, Denmark",
@@ -58,9 +62,10 @@
     {
 
         "id" : 5,
-        "name" : "Bolzano",
+        "city" : "Bolzano",
+        "name" : "Bolzano Speech and Language Center",
         "image" : "../assets/img/locations/l005/001.jpg",
-        "description" : "<p>Bolzano Speech and Language Center offers Speech and Language Services to children up to the age of 14 years old.<p>",
+        "description" : "<p>Bolzano Speech and Language Center offers Speech and Language Services to children up to the age of 14 years old. </p><p> The Center is open from Monday to Friday from 0830 to 1630.",
         "practicalInfo" : "<p>In order to access the services here, please book an appointment through the contacts below.<p>",
         "contactperson" : "Nicolas Castardus",
         "address" : "Via Laurino, 4, 39100 Bolzano BZ",
