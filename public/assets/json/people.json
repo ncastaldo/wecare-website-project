@@ -1,75 +1,43 @@
-{
-    "people": [
-        {
-            "id": "p001",
-            "firstname": "Meredith",
-            "lastname": "Gray",
-            "image": "../assets/img/people/p001.jpg",
-            "profession": "Music Therapist",
-            "description": "<p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p>",
-            "services": [
-                {
-                    "id": "s001"
-                }
-            ]
-        },
-        {
-            "id": "p002",
-            "firstname": "Derek",
-            "lastname": "Tucker",
-            "image": "../assets/img/people/p002.jpg",
-            "profession": "Speech Therapist",
-            "description": "<p>Derek is a specialist in speech and language therapy.  At We Care Derek helps our petients with different kinds of speech difficulties as well as language issues like dyslexia and dyspraxia.</p> Dereke has received many rewards in various works to prevent, assess, diagnose, and treat speech, language, social communication, cognitive-communication, and swallowing disorders in children and young adults. we are proud to have him on board.</p>",
-            "services": [
-                {
-                    "id": "s002"
-                }
-            ]
-        },
-        {
-            "id": "p003",
-            "firstname": "Amara",
-            "lastname": "Johnson",
-            "image": "../assets/img/people/p003.jpg",
-            "profession": "Music Therapist and Physiotherapist",
-            "description": "<p>Johnson has a double degree in Music therapy and pysiotherapy. At We Care he works both as Music Therapist and Pysiotherapist.</p>",
-            "services": [
-                {
-                    "id": "s001"
-                },
-                {
-                    "id": "s005"
-                }
-            ]
-        },
-        {
-            "id": "p004",
-            "firstname": "Song",
-            "lastname": "Wang",
-            "image": "../assets/img/people/p004.jpg",
-            "profession": "Psychologist and Psycho",
-            "description": "<p>Dr. Wang is specialised both in Pychotherapy and psychomotricity. Dr Wang helps children and young adults with deficient in psychomotor retardation. He creates the right mediation through tools that characterize psychomotricity such as body, sensoryity, movement, play, graphic and manipulative production. </p>",
-            "services": [
-                {
-                    "id": "s003"
-                },
-                {
-                    "id": "s004"
-                }
-            ]
-        },
-        {
-            "id": "p005",
-            "firstname": "Mario",
-            "lastname": "Moneta",
-            "image": "../assets/img/people/p005.jpg",
-            "profession": "Child psychiatrist",
-            "description": "<p>Dr. Moneta graduated as a medical doctor (M.D) and continued his education to obtain a Ph. D in Psychology. Mario started teaching and providing therapy as an Assistant Professor in the Department of Clinical Psychology with a focus on CBT & DBT. He founded the Norwegian Mental Health Centre in 2015 where he provided therapy and counseling for children and young adults.</p>",
-            "services": [
-                {
-                    "id": "s004"
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "firstname": "Meredith",
+        "lastname": "Gray",
+        "image": "../assets/img/people/p001.jpg",
+        "profession": "Music Therapist",
+        "description": "<p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p>"
+
+    },
+    {
+        "id": 2,
+        "firstname": "Derek",
+        "lastname": "Tucker",
+        "image": "../assets/img/people/p002.jpg",
+        "profession": "Speech Therapist",
+        "description": "<p>Derek is a specialist in speech and language therapy.  At We Care Derek helps our petients with different kinds of speech difficulties as well as language issues like dyslexia and dyspraxia.</p> Dereke has received many rewards in various works to prevent, assess, diagnose, and treat speech, language, social communication, cognitive-communication, and swallowing disorders in children and young adults. we are proud to have him on board.</p>"
+    },
+    {
+        "id": 3,
+        "firstname": "Amara",
+        "lastname": "Johnson",
+        "image": "../assets/img/people/p003.jpg",
+        "profession": "Music Therapist and Physiotherapist",
+        "description": "<p>Johnson has a double degree in Music therapy and pysiotherapy. At We Care he works both as Music Therapist and Pysiotherapist.</p>"
+    },
+    {
+        "id": 4,
+        "firstname": "Song",
+        "lastname": "Wang",
+        "image": "../assets/img/people/p004.jpg",
+        "profession": "Psychologist and Psycho",
+        "description": "<p>Dr. Wang is specialised both in Pychotherapy and psychomotricity. Dr Wang helps children and young adults with deficient in psychomotor retardation. He creates the right mediation through tools that characterize psychomotricity such as body, sensoryity, movement, play, graphic and manipulative production. </p>"
+    },
+    {
+        "id": 5,
+        "firstname": "Mario",
+        "lastname": "Moneta",
+        "image": "../assets/img/people/p005.jpg",
+        "profession": "Child psychiatrist",
+        "description": "<p>Dr. Moneta graduated as a medical doctor (M.D) and continued his education to obtain a Ph. D in Psychology. Mario started teaching and providing therapy as an Assistant Professor in the Department of Clinical Psychology with a focus on CBT & DBT. He founded the Norwegian Mental Health Centre in 2015 where he provided therapy and counseling for children and young adults.</p>"
+    }
+]

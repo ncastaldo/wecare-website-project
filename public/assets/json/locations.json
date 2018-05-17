@@ -1,139 +1,73 @@
-{ 
-    "locations" : [
+[
 
-        {
-
-            "id" : "l001",
-            "image" : "../assets/img/locations/l001/001.jpg",
-            "name" : "London",
-            "description" : " At Westminster Center, with our specialised team, the focus is given Music Therapy & Speech and Language Services.",
-            "practicalInfo" : "<p>Westminster Center is located in the heart of London. </p> The modality of access: This is possible through appointment requested via either email of telephon. The contacts are linked below.<p>",
-            "contactperson" : "<p>Charles Blackwood<p>",
-            "Address" : "North Mews, London WC1N 2JP, UK",
-            "Email" : "westminister@wecare.no",
-            "telephon" : "<p>+44 871 527 9608<p>",
-            "photogallery" : [
-                {
-                    "image" : "../assets/img/locations/l001/006.jpg"
-                }
-            ],
-            "services" : [
-                {
-                    "id" : "s001"
-                },
-                {
-                    "id" : "s002"
-                }
-            ]
-
-        },
+    {
         
-        {
+        "id" : 1,
+        "name" : "London",
+        "image" : "../assets/img/locations/l001/001.jpg",
+        "description" : " At Westminster Center, with our specialised team, the focus is given Music Therapy & Speech and Language Services.",
+        "practicalInfo" : "<p>Westminster Center is located in the heart of London. </p> The modality of access: This is possible through appointment requested via either email of telephon. The contacts are linked below.<p>",
+        "contactperson" : "<p>Charles Blackwood<p>",
+        "address" : "North Mews, London WC1N 2JP, UK",
+        "email" : "westminister@wecare.no",
+        "telephone" : "+44 871 527 9608"
 
-            "id" : "l002",
-            "image" : "../assets/img/locations/l002/002.jpg",
-            "name" : "Roma",
-            "description" : "<p>Colosseo Care Center is one of We Care locations located in the heart of Rome. </p> <p>Services offered at this  location are <b> Music Therapy </b> and </b> Psychotherapy </b>. <p>",
-            "practicalInfo" : " <p> The modality to access the location is through the application sent via email..",
-            "contactperson" : "<p><b>Simona Bergamasci</b>",
-            "Address" : "Via di Monte del Gallo, 113, 00165 Roma ",
-            "Email" : "colosseo@wecare.no",
-            "telephon" : "+39 06 3938 7355",
-            "photogallery" : [
-                {
-                    "image" : "../assets/img/locations/l002/007.jpg"
-                }
-            ],
-            "services" : [
-                {
-                    "id" : "s001"
-                },
-                {
-                    "id" : "s004"
-                }
-            ]
+    },
 
-        },
-        
-        {
+    {
 
-            "id" : "l003",
-            "image" : "../assets/img/locations/l002/003.jpg",
-            "name" : "Oslo",
-            "description" : "<p> Bygdøy Children Center offers Psychotherapy and Pshycomotricity services to childre and young adult<p>",
-            "practicalInfo" : "<p> This center is accessible through an appointment. The specialist will valuate your child and follow up the case. For more information please reffer to the contacts below.<p>",
-            "contactperson" : "<p> Hilde Johansen",
-            "Address" : "Gabels gate 16, 0272 Oslo, Norway",
-            "Email" : "bygdoy@wecare.no",
-            "telephon" : "+47 23 27 65 00",
-            "photogallery" : [
-                {
-                    "image" : "../assets/img/locations/l002/008.jpg"
-                }
-            ],
-            "services" : [
-                {
-                    "id" : "s003"
-                },
-                {
-                    "id" : "s004"
-                }
-            ]
+        "id" : 2,
+        "name" : "Roma",
+        "image" : "../assets/img/locations/l002/001.jpg",
+        "description" : "<p>Colosseo Care Center is one of We Care locations located in the heart of Rome. </p> <p>Services offered at this  location are <b> Music Therapy </b> and </b> Psychotherapy </b>. <p>",
+        "practicalInfo" : " <p> The modality to access the location is through the application sent via email..",
+        "contactperson" : "<p><b>Simona Bergamasci</b>",
+        "address" : "Via di Monte del Gallo, 113, 00165 Roma",
+        "email" : "colosseo@wecare.no",
+        "telephone" : "+39 06 3938 7355"
 
-        },
-        
-        {
+    },
 
-            "id" : "l004",
-            "image" : "../assets/img/locations/l002/004.jpg",
-            "name" : "København",
-            "description" : "<p>København Children Multisevice Center offers Music Therapy and Physiotherapy services to childre  and young adults. The center was built in March 2018 and is located at 15 km off the city of Copenhagen. <p>",
-            "practicalInfo" : "<p>The center recieves and help children in need of these services. For more information on how to access the services, please contact us.<p>",
-            "contactperson" : "Robert Amash ",
-            "Address" : "Colbjørnsensgade 11, 1652 København V, Denmark",
-            "Email" : "copenhagen@wecare.no",
-            "telephon" : "+45 33 23 29 29",
-            "photogallery" : [
-                {
-                    "image" : "../assets/img/locations/l002/009.jpg"
-                }
-            ],
-            "services" : [
-                {
-                    "id" : "s001"
-                },
-                {
-                    "id" : "s005"
-                }
-            ]
+    {
 
-        },
-        
-        {
+        "id" : 3,
+        "name" : "Oslo",
+        "image" : "../assets/img/locations/l003/001.jpg",
+        "description" : "<p> Bygdøy Children Center offers Psychotherapy and Pshycomotricity services to childre and young adult<p>",
+        "practicalInfo" : "<p> This center is accessible through an appointment. The specialist will valuate your child and follow up the case. For more information please reffer to the contacts below.<p>",
+        "contactperson" : "<p> Hilde Johansen",
+        "address" : "Gabels gate 16, 0272 Oslo, Norway",
+        "email" : "bygdoy@wecare.no",
+        "telephone" : "+47 23 27 65 00"
 
-            "id" : "l005",
-            "image" : "../assets/img/locations/l002/005.jpg",
-            "name" : "Bolzano",
-            "description" : "<p>Bolzano Speech and Language Center offers Speech and Language Services to children up to the age of 14 years old.<p>",
-            "practicalInfo" : "<p>In order to access the services here, please book an appointment through the contacts below.<p>",
-            "contactperson" : "Nicolas Castardus",
-            "Address" : "Via Laurino, 4, 39100 Bolzano BZ",
-            "Email" : "bslc@wecare.no",
-            "telephon" : "+39 471 311000",
-            "photogallery" : [
-                {
-                    "image" : "../assets/img/locations/l002/010.jpg"
-                }
-            ],
-            "services" : [
-                
-                {
-                    "id" : "s002"
-                }
-            ]
+    },
 
-        }
-        
-        
-    ]
-}
+    {
+
+        "id" : 4,
+        "name" : "København",
+        "image" : "../assets/img/locations/l004/001.jpg",
+        "description" : "<p>København Children Multisevice Center offers Music Therapy and Physiotherapy services to childre  and young adults. The center was built in March 2018 and is located at 15 km off the city of Copenhagen. <p>",
+        "practicalInfo" : "<p>The center recieves and help children in need of these services. For more information on how to access the services, please contact us.<p>",
+        "contactperson" : "Robert Amash ",
+        "address" : "Colbjørnsensgade 11, 1652 København V, Denmark",
+        "email" : "copenhagen@wecare.no",
+        "telephone" : "+45 33 23 29 29"
+    },
+
+    {
+
+        "id" : 5,
+        "name" : "Bolzano",
+        "image" : "../assets/img/locations/l005/001.jpg",
+        "description" : "<p>Bolzano Speech and Language Center offers Speech and Language Services to children up to the age of 14 years old.<p>",
+        "practicalInfo" : "<p>In order to access the services here, please book an appointment through the contacts below.<p>",
+        "contactperson" : "Nicolas Castardus",
+        "address" : "Via Laurino, 4, 39100 Bolzano BZ",
+        "email" : "bslc@wecare.no",
+        "telephone" : "+39 471 311000",
+
+    }
+
+
+]
