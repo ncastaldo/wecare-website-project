@@ -33,13 +33,21 @@ main {
     margin-bottom: 10px; /* between main and footer */
 }
 
-a .link-custom{
-    color: #0066ff !important;
+a {
+    text-decoration: none !important;
+    color: #0066ff;
 }
 
-a:hover .link-custom{
+a:hover{
     color: #ff6600 !important;
-    text-decoration: underline !important;
+}
+
+a .link-description{
+    color: #000000 !important;
+}
+
+a:hover .link--description{
+    color: #000000 !important;
 }
 
 
@@ -63,6 +71,7 @@ a:hover .link-custom{
 
 .btn:hover, 
 .btn.active{
+    color: #ffffff !important;
     background-color: #ff6600;
 }
 
@@ -126,20 +135,6 @@ a:hover .link-custom{
     color: #ff6600;
 }
 
-.breadcrumb-custom a{
-    color: #0066ff;
-}
-
-.breadcrumb-custom a:hover{
-    text-decoration: none;
-    color: #ff6600;
-}
-
-
-
-
-
-
 
 
 
@@ -195,11 +190,38 @@ a:hover .link-custom{
     background-color: inherit! important;
 }
 
+.image-intro {
+    max-width: 300px;
+}
+
+.card-container,
+.simple-card-container,
+.little-card-container{
+    display: flex;
+    align-items: stretch;
+}
+
+.simple-card-container .card-img-top {
+    height: 70%;
+}
 
 
+.little-card-container{
+    height: 100px;
+}
+.little-card-container .card-img-top {
+    height: 60%;
+    filter: grayscale(100%);
+}
 
 
-
+.little-card-container .card.active {
+    color: #ff6600 !important;
+}
+.little-card-container .card.active .card-img-top,
+.little-card-container a:hover .card-img-top{
+    filter: none !important;
+}
 
 
 
