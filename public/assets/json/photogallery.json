@@ -1,0 +1,174 @@
+[
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/001.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/002.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/003.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/004.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/005.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 1,
+        "image" : "/assets/img/services/s001/006.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/001.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/002.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/003.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/004.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/005.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 2,
+        "image" : "/assets/img/services/s002/006.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/001.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/002.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/003.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/004.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/005.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 3,
+        "image" : "/assets/img/services/s003/006.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 4,
+        "image" : "/assets/img/services/s004/001.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 4,
+        "image" : "/assets/img/services/s004/002.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 4,
+        "image" : "/assets/img/services/s004/003.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 4,
+        "image" : "/assets/img/services/s004/004.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 4,
+        "image" : "/assets/img/services/s004/005.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/001.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/002.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/003.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/004.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/005.jpg"
+    },
+    {
+        "type" : "service",
+        "id" : 5,
+        "image" : "/assets/img/services/s005/006.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 1,
+        "image" : "/assets/img/locations/l001/001.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 1,
+        "image" : "/assets/img/locations/l001/002.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 1,
+        "image" : "/assets/img/locations/l001/003.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 1,
+        "image" : "/assets/img/locations/l001/004.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 1,
+        "image" : "/assets/img/locations/l001/005.jpg"
+    }
+    
+    
+]
