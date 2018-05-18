@@ -207,17 +207,30 @@ a:hover .link--description{
 
 
 .little-card-container{
-    height: 100px;
+    max-height: auto;
+}
+
+.little-card-container .card{
+    /*height: 100px;*/
+    border: none !important;
 }
 .little-card-container .card-img-top {
-    height: 60%;
+    height: 40%;
     filter: grayscale(100%);
 }
 
+@media only screen and (min-width: 767px) {
+    
+    .little-card-container .card-img-top {
+        height: 60% !important;
+    }
+}
 
-.little-card-container .card.active {
+
+.little-card-container .card.active{
     color: #ff6600 !important;
 }
+
 .little-card-container .card.active .card-img-top,
 .little-card-container a:hover .card-img-top{
     filter: none !important;
