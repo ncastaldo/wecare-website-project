@@ -233,13 +233,32 @@ app.get("/rest/people/:id", function(req,res) {
 app.get("/rest/locations", function(req, res){
     let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
     let limit = parseInt(_.get(req, "query.limit", 5));
-    let myQuery = sqlDb("locations")
-        .offset(start)
-        .limit(limit)
-        .orderBy("name")
-        .then( (location) => {
-            res.send(JSON.stringify(location));
-    });
+    
+    let serviceId = parseInt(_.get(req, "query.serviceId", -1));
+    
+    if(serviceId<0){
+        let myQuery = sqlDb("locations")
+            .offset(start)
+            .limit(limit)
+            .orderBy("name")
+            .then( (location) => {
+                res.send(JSON.stringify(location));
+            });
+        
+    }else{
+    
+        let myQuery = sqlDb
+                .select("locations.id","locations.name","locations.image", "locations.city")
+                .from("locations")
+                .leftJoin("locations_services", "locations.id", "locations_services.locationId")
+                .where("locations_services.serviceId", serviceId)
+                .orderBy("locations.name")
+                .then( (location) => {
+                    res.send(JSON.stringify(location));
+                });
+        
+    }
+    
 });
 
 app.get("/rest/locations/:id", function(req, res){
