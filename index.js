@@ -17,6 +17,7 @@ let locationsJson = require("./public/assets/json/locations.json");
 let servicesJson = require("./public/assets/json/services.json");
 let locationsServicesJson = require("./public/assets/json/locations_services.json");
 let whoWeAreJson = require("./public/assets/json/whoweare.json");
+let photogalleryJson = require("./public/assets/json/photogallery.json");
 
 
 
@@ -49,7 +50,11 @@ function initDatabaseConnection(){
 
 function ensurePopulated(){
     //this returns a "promise", I can use "then" with a callback
-    return ensurePeople() && ensureLocations() && ensureServices() && ensureLocationsServices();
+    return ensurePeople() 
+        && ensureLocations() 
+        && ensureServices() 
+        && ensureLocationsServices() 
+        && ensurePhotogallery();
 }
 
 function ensurePeople(){
@@ -145,6 +150,25 @@ function ensureLocationsServices(){
     });
 }
 
+function ensurePhotogallery(){
+    return sqlDb.schema.hasTable("photogallery").then(function (exists){
+        if(!exists){
+            return sqlDb.schema.createTable("photogallery", function (table){
+                table.enu("type",["service","location"]);
+                table.integer("id").unsigned();
+                table.text("image");
+            }).then( function() {
+                let insertion = _.map(photogalleryJson, function(el) {
+                    return sqlDb("photogallery").insert(el);
+                })
+                return Promise.all(insertion); //to return when all promises are fulfilled
+            })
+        } else {
+            return true;
+        };
+    });
+}
+
 
 
 
@@ -218,8 +242,6 @@ app.get("/rest/locations", function(req, res){
     });
 });
 
-
-
 app.get("/rest/locations/:id", function(req, res){
     let locationId = req.params.id;
     let myQuery = sqlDb("locations")
@@ -229,6 +251,18 @@ app.get("/rest/locations/:id", function(req, res){
             res.send(JSON.stringify(location));
     });
 });
+
+app.get("/rest/locations/:id/photogallery", function(req, res){
+    let locationId = req.params.id;
+    let myQuery = sqlDb.select("image")
+        .from("photogallery")
+        .where("id", locationId)
+        .andWhere("type", "location")
+        .then( (image) => {
+            res.send(JSON.stringify(image));
+    });
+});
+
 
 
 // SERVICES
@@ -269,6 +303,17 @@ app.get("/rest/services/:id", function(req, res){
         .first()
         .then( (service) => {
             res.send(JSON.stringify(service));
+    });
+});
+
+app.get("/rest/services/:id/photogallery", function(req, res){
+    let serviceId = req.params.id;
+    let myQuery = sqlDb.select("image")
+        .from("photogallery")
+        .where("id", serviceId)
+        .andWhere("type", "service")
+        .then( (image) => {
+            res.send(JSON.stringify(image));
     });
 });
 
