@@ -35,6 +35,30 @@ $(document).ready(function(){
         success: function(data){ loadJsonServiceIntoHtml(data);}
 
     });
+    
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/locations?serviceId=" + serviceId, //SERVER URL
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(data){ loadJsonRelatedLocations(data);}
+
+    });
+    
+    $("#relatedLocations").click(function(){
+        if( $(".RELATED-LOCATIONS").is(":visible") ){
+            $(".RELATED-LOCATIONS").slideUp();
+            $("#relatedLocations").text("Show");
+        }else{
+            $(".RELATED-LOCATIONS").slideDown();
+            $("#relatedLocations").text("Hide");
+        }
+    });
+    
+    $(".RELATED-LOCATIONS").hide();
+    $("#relatedLocations").text("Show");
 
 
 });
@@ -45,8 +69,9 @@ function loadJsonServiceIntoHtml(service){
 
     $(".SERVICE-NAME").text(service.name);
     $(".SERVICE-DESCRIPTION").html(service.description2);
-    $(".SERVICE-IMAGE").html('<img class="image-intro animated fadeInRight" src="'+service.image+'" />');
+    $(".SERVICE-IMAGE").attr("src", service.image);
     $(".SERVICE-PRACTICAL-INFO").html(service.practicalInfo);
+    $(".SERVICE-TELEPHONE").text(service.telephone);
 
     $.ajax({
         method: "GET",
@@ -70,27 +95,16 @@ function loadJsonServiceIntoHtml(service){
 
 }
 
-function loadRelatedLocations(json){
+function loadJsonRelatedLocations(locations){
 
     let el = "";
-    console.log(json);
 
-    for (let j = 0; j < json.locations.length; j++) {
+    for (let j = 0; j < locations.length; j++) {
 
-        let location = json.locations[j];
-
-        for(let i = 0; i<location.services.length; i++){
-
-            if(location.services[i].id === serviceId){
-
-                //TODO HREF
-
-                el +='<div class="simple-card-container col-lg-2 col-md-3 col-sm-4 col-6 mb-4 text-center"><a class="card" href="location.html?id='+location.id+'"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>'
+        let location = locations[j];
 
 
-            }
-
-        }
+        el +='<div class="simple-card-container col-lg-2 col-md-3 col-sm-4 col-6 mb-4 text-center"><a class="card" href="location.html?id='+location.id+'"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>'
 
     }
 

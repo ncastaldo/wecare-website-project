@@ -46,6 +46,8 @@ function loadJsonIntoHtml(currentLocation){
     
     console.log("hey");
     
+    $('.SERVICES-BUTTON').attr("href","services.html?locationId="+currentLocation.id);
+    
     
     /* TODO photogallery
     $.ajax({
