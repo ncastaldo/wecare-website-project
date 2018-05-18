@@ -67,10 +67,11 @@ a:hover .link--description{
 .btn{
     background-color: #0066ff;
     border: none !important;
+    color: #ffffff !important;
 }
 
-.btn:hover, 
-.btn.active{
+
+.btn:hover{
     color: #ffffff !important;
     background-color: #ff6600;
 }
