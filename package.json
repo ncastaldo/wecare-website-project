@@ -4,8 +4,7 @@
   "description": "This repository will be updated during our hands on lectures with a small app to manage pets. We suggest to use it as a starting point (fork) for your project once we finished.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
