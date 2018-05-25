@@ -13,6 +13,7 @@ let knex = require("knex");
 /*************************/
 
 let peopleJson = require("./public/assets/json/people.json");
+let peopleServicesJson = require("./public/assets/json/people_services.json");
 let locationsJson = require("./public/assets/json/locations.json");
 let servicesJson = require("./public/assets/json/services.json");
 let locationsServicesJson = require("./public/assets/json/locations_services.json");
@@ -51,6 +52,7 @@ function initDatabaseConnection(){
 function ensurePopulated(){
     //this returns a "promise", I can use "then" with a callback
     return ensurePeople() 
+        && ensurePeopleServices()
         && ensureLocations() 
         && ensureServices() 
         && ensureLocationsServices() 
@@ -81,6 +83,27 @@ function ensurePeople(){
             return true;
         };
     });
+}
+
+
+function ensurePeopleServices(){
+    return sqlDb.schema.hasTable("people_services").then(function (exists){
+        if(!exists){
+            return sqlDb.schema.createTable("people_services", function (table){
+                table.integer("personId").unsigned();
+                table.integer("serviceId").unsigned();
+            }).then( function() {
+                let insertion = _.map(peopleServicesJson, function(el) {
+                    return sqlDb("people_services").insert(el);
+                })
+                return Promise.all(insertion); //to return when all promises are fulfilled
+            })
+        } else {
+            return true;
+        };
+    });
+    
+    
 }
 
 function ensureLocations(){
@@ -206,13 +229,29 @@ app.set("port", myPort);
 app.get("/rest/people", function(req, res){
     let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
     let limit = parseInt(_.get(req, "query.limit", 5));
-    let myQuery = sqlDb("people")
-        .offset(start)
-        .limit(limit)
-        .orderBy("lastname", "firstname")
-        .then( (person) => {
-            res.send(JSON.stringify(person));
-    });
+    
+    let serviceId = parseInt(_.get(req, "query.serviceId", -1));
+    
+    if(serviceId<0){
+        let myQuery = sqlDb("people")
+            .offset(start)
+            .limit(limit)
+            .orderBy("lastname", "firstname")
+            .then( (person) => {
+                res.send(JSON.stringify(person));
+        });
+    }else{
+        let myQuery = sqlDb
+                .select("people.id","people.firstname","people.lastname","people.image", "people.profession")
+                .from("people")
+                .leftJoin("people_services", "people.id", "people_services.personId")
+                .where("people_services.serviceId", serviceId)
+                .orderBy("people.lastname","people.firstname")
+                .then( (people) => {
+                    res.send(JSON.stringify(people));
+                });
+    }
+    
 });
 
 app.get("/rest/people/:id", function(req,res) {
@@ -226,6 +265,8 @@ app.get("/rest/people/:id", function(req,res) {
     });
     
 });
+
+
 
 
 // LOCATIONS
