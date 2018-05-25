@@ -2,7 +2,7 @@ var URL = function () {
   // This function is anonymous, is executed immediately and 
   // the return value is assigned to QueryString!
   var query_string = {};
-  var query = window.location.search.substring(1);
+  var query = window.location.hash.substring(1);
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
     var pair = vars[i].split("=");
@@ -21,19 +21,12 @@ var URL = function () {
   return query_string;
 }();
 
-let locationId = URL.locationId;
+
+let locationId;
 
 $(document).ready(function(){
 
-    $.ajax({
-        method: "GET",
-        dataType: "json",
-        url: "/rest/services" + ( (locationId===undefined) ? ("") : ("?locationId="+locationId) ),  //SERVER URL
-        error: function (request, error) {
-            console.log(request, error);
-        },
-        success: function(data){ loadJsonServicesIntoHtml(data);}
-    });
+    performServicesAjaxCalls();
     
     $.ajax({
         method: "GET",
@@ -44,7 +37,6 @@ $(document).ready(function(){
         },
         success: function(data){ loadJsonLocationsIntoHtml(data);}
     });
-    
     
     $("#orderByLocation").click(function(){
         if( $(".SERVICE-LOCATIONS").is(":visible") ){
@@ -57,15 +49,26 @@ $(document).ready(function(){
     });
     
     $(".SERVICE-LOCATIONS").hide();
-    
-    
-    
-    //getServicesData(saveAndLoadData);
-    
-    //console.log(" loc id " + locationId);
-    //$("#"+URL.locationId).trigger("click");
 
 });
+
+function performServicesAjaxCalls(){
+    
+    locationId = URL.locationId;
+    
+    $(".SERVICES").empty();
+    
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/services" + ( (locationId===undefined) ? ("") : ("#locationId="+locationId) ),  //SERVER URL
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(data){ loadJsonServicesIntoHtml(data);}
+    });
+    
+}
 
 function loadJsonServicesIntoHtml(services){
 
@@ -93,7 +96,7 @@ function loadJsonLocationsIntoHtml(locations){
     let locationName;
     let el = "";
     
-    el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn"><a class="card '+((locationId===undefined) ? ('active') : ('') ) +'" href="services.html"><img class="card-img-top" src="../assets/img/locations/all.jpg"><h6 class="card-title pt-2 link-custom">All</h6></a></div>';
+    el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn"><a class="card '+((locationId===undefined) ? ('active') : ('') ) +'" href="services.html#all" onclick="performServicesAjaxCalls()"><img class="card-img-top" src="../assets/img/locations/all.jpg"><h6 class="card-title pt-2 link-custom">All</h6></a></div>';
 
     for (let i = 0; i < locations.length; i++) {
 
@@ -101,7 +104,7 @@ function loadJsonLocationsIntoHtml(locations){
         if(locationId == location.id)
             locationName=location.name;
 
-        el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a class="card '+((locationId==location.id) ? ('active') : ('') )+' " href="services.html?locationId='+location.id+'"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>';
+        el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a class="card '+((locationId==location.id) ? ('active') : ('') )+' " href="services.html#locationId='+location.id+'" onclick="performServicesAjaxCalls()"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>';
 
     }
 

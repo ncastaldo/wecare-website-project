@@ -26,35 +26,26 @@ $(document).ready(function(){
     $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/locations/"+URL.id,
+        url: "/rest/people/"+URL.id,
         error: function (request, error) {
             console.log(request, error);
         },
         success: function(json){ loadJsonIntoHtml(json);}
     });
-
+    
 });
 
-function loadJsonIntoHtml(currentLocation){
+function loadJsonIntoHtml(person){
+    
 
-    $(".LOCATION-NAME").text(currentLocation.name);
-    $(".LOCATION-DESCRIPTION").html(currentLocation.description);
-    $(".LOCATION-IMAGE").attr("src", currentLocation.image);
-    $(".LOCATION-PRACTICAL-INFO").html(currentLocation.practicalInfo);
-    
-    $(".LOCATION-TELEPHONE").attr("href", "tel:"+ currentLocation.telephone);
-    $(".LOCATION-TELEPHONE span").text(currentLocation.telephone);
-    
-    $(".LOCATION-EMAIL").attr("href", "mailto:"+ currentLocation.email);
-    $(".LOCATION-EMAIL span").text(currentLocation.email);
-    
-    $(".LOCATION-ADDRESS").attr("href", "http://maps.google.com/?daddr="+ currentLocation.address);
-    $(".LOCATION-ADDRESS span").text(currentLocation.address);
+    $(".PERSON-FIRSTNAME").text(person.firstname);
+    $(".PERSON-LASTNAME").text(person.lastname);
+    $(".PERSON-FULLNAME").text(person.firstname + " " + person.lastname);
+    $(".PERSON-PROFESSION").html(person.profession);
+    $(".PERSON-DESCRIPTION").html(person.description);
+    $(".PERSON-IMAGE").attr("src", person.image);
 
     let el= "";
-    
-    $('.SERVICES-BUTTON').attr("href","services.html?locationId="+currentLocation.id);
-    
     
     /* TODO photogallery
     $.ajax({

@@ -42,7 +42,7 @@ function loadData(json){
         console.log(person.id);
         
         //CREATE A LI ELEMENT WITH ALL ATTRIBUTES NEEDED
-        el += '<div class="col-lg-3 col-md-4 col-sm-6 col-12 text-center mb-4 animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a href="#"><img class="rounded-circle img-fluid d-block p-4" src="'+person.image+'" alt=""><h4>'+person.firstname+' '+person.lastname+'<br><small class="link-description">'+person.profession+'</small></a></div>';
+        el += '<div class="col-lg-3 col-md-4 col-sm-6 col-12 text-center mb-4 animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a href="person.html?id='+person.id+'"><img class="rounded-circle img-fluid d-block p-4" src="'+person.image+'" alt=""><h4>'+person.firstname+' '+person.lastname+'<br><small class="link-description">'+person.profession+'</small></a></div>';
 
     }
     
