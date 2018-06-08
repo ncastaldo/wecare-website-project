@@ -2,34 +2,38 @@
 <html lang="en">
 
     <head>
-        
+
         <title>We care</title>
-        
+
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
-        
+
         <!-- BOOTSTRAP minified CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-        
+
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="../assets/css/animate.min.css">
+
         <!-- Add icon library -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main.css">
-        
+
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
 
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
-        
+
         <script type= "text/javascript" src="../assets/js/script.js"></script>
-        
+
     </head>
 
     <body>
-        
+
         <!-- HEADER -->
         <div class="top-content">
 
@@ -65,7 +69,7 @@
                             <li class="nav-item">
                                 <a href="home.html" class="nav-link">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="whoWeAre.html" class="nav-link">Who we are</a>
                             </li>
                             <li class="nav-item">
@@ -97,10 +101,20 @@
 
         </div>
         <!-- /HEADER -->
-        
+
         <!-- MAIN -->
         <main role="main">
-            
+
+            <div class="top-background animated fadeIn" id="services-bg">
+
+                <div class="container">
+                    <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
+                        <span class="top-background-title">Who we are</span>
+                    </h2>
+                </div>
+
+            </div>
+
             <nav class="breadcrumb-navbar">
                 <div class="container">
                     <ol class="breadcrumb breadcrumb-custom">
@@ -109,20 +123,119 @@
                     </ol>
                 </div>
             </nav>
-        
-            
+
+            <div class="container mt-3">
+
+                <div class="row">
+
+                    <div class= "content-wwa col-lg-8 col-md-8 col-sm-12 pr-md-2">
+
+                        <img src="/assets/img/whoWeAre/001.jpg" class="pr-3 pl-3 animated fadeIn" style="max-width:100%;">
+
+                        <div class="pt-2 mt-4 pr-3 pl-3">
+
+
+                            <div class="pb-2 mb-4" id="mission">
+
+                                <h3><span class="h-title">Mission</span></h3>
+
+                                <p>For We Care, ensuring children and young adult’s wellbeing means creating opportunities for a decent, full and satisfactory life: in other words, offering them a proper therapy, personal and medical care, as well as the chance of freely nurturing their most intimate aspirations.</p>
+
+                                <img src="/assets/img/whoWeAre/002.jpg" class="image-wwa animated fadeIn">
+
+                            </div>
+
+                            <div class="pb-2 mb-4" id="history">
+
+                                <h3><span class="h-title">History</span></h3>
+
+                                <p>We Care Association was founded in England in February 2018 as a Voluntary Association, followed a few months later, in April 2018, by the Social Cooperative up to the Foundation in May 2018. Its eligibility as a Non-Governmental Organization (NGO) was issued by the Ministry for Foreign Affairs in April 2018: since then, the servicies activities have been developed in major cities accross Europe according to the principles and approaches of international cooperation.</p>
+
+                                <img src="/assets/img/whoWeAre/003.jpg" class="image-wwa animated fadeIn">
+
+                            </div>
+
+                            <div  class="pb-2 mb-4" id="association">
+
+                                <h3><span class="h-title">Association</span></h3>
+
+                                <p>We Care is a humanitarian association that operates through its locations that are found in major cities in Europe. Its charter members aimed at creating an organisation able to implement effective actions to help and protect children and young adults with disabilities and safeguard as well as promote their rights to grow up in a safe and suitable environment.</p>
+
+                                <img src="/assets/img/whoWeAre/004.jpg" class="image-wwa animated fadeIn">
+
+                            </div>
+
+                            <div class="pb-2 mb-4" id="networks">
+
+                                <h3><span class="h-title">Networks</span></h3>
+
+                                <p>We Care, through the participation in conferences, initiatives, campaigns, working thematic groups and becoming a member of several italian, european and world networks, has strengthened its presence in terms of networking.</p>
+
+                                <img src="/assets/img/whoWeAre/005.jpg" class="image-wwa animated fadeIn">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 pl-md-0 pt-md-0 pt-sm-2 pt-2" style="overflow:hidden;">
+
+
+                        <nav class="d-none d-md-block sidebar animated fadeInRight" style="animation-delay:0.3s;">
+
+                            <ul class="nav nav-tabs flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#mission">Mission</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#history">History</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#association">Association</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#networks">Networks</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="container mt-3 pt-3 pb-3" style="background-color:#e9ecef;">
+                                <h5 class="h-title"><span>Subsribe to our Newsletter</span></h5>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Enter email">
+                                </div>
+                                <a class="btn btn-primary" href="#" role="button">Submit</a>
+                            </div>
+                            
+                            <div class="container mt-3">
+                                <h5 class="h-title"><span>Help us with a donation</span></h5>
+                                <a class="btn btn-primary btn-donate" href="#" role="button">DONATE</a>
+                            </div>
+                            
+                        </nav>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script src="/assets/js/whoWeAre.js"></script>
+
         </main>
         <!-- /MAIN -->
-        
+
         <!-- FOOTER -->
         <footer class="footer footer-custom">
-            
+
             <div class="container">
-                
+
                 <nav class="navbar navbar-footer-custom navbar-expand">
-                
+
                     <div class="navbar-nav mr-auto">
-                    
+
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a href="#" class="fa fa-facebook"></a>
@@ -134,13 +247,13 @@
                                 <a href="#" class="fa fa-instagram"></a>
                             </li>
                         </ul>
-                
+
                     </div>   
-                    
+
                     <div class="navbar-nav ml-auto">
-                        
+
                         <ul class="navbar-nav">
-                            
+
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Home</a>
                             </li>
@@ -152,14 +265,14 @@
                             </li>
                         </ul>
                     </div>    
-                    
+
                 </nav>
-            
+
             </div>
-            
+
         </footer>
         <!-- /FOOTER -->
-        
+
     </body>
-    
+
 </html>

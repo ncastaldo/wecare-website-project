@@ -72,7 +72,7 @@
                             <li class="nav-item">
                                 <a href="whoWeAre.html" class="nav-link">Who we are</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="services.html" class="nav-link">Services</a>
                             </li>
                             <li class="nav-item">
@@ -105,6 +105,17 @@
         <!-- MAIN -->
         <main role="main">
 
+            <div class="top-background animated fadeIn" id="services-bg">
+
+                <div class="container">
+                    <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
+                        <span class="top-background-title SERVICES-NAME"><!-- DYNAMIC HERE -->
+                        </span>
+                    </h2> <!-- DYNAMIC HERE -->
+                </div>
+
+            </div>
+
             <nav class="breadcrumb-navbar">
                 <div class="container">
                     <ol class="breadcrumb breadcrumb-custom">
@@ -114,30 +125,38 @@
                 </div>
             </nav>    
 
-            <div class="container">
 
-                <a id="orderByLocation" class="btn btn-primary mb-3 mt-1">
-                    Order by location
-                </a>
+            <div class="order-by-div">
 
+                <div class="container pt-2">
+                    
+                    <a class="d-flex pb-2" id="orderByLocation" href="javascript:void(0)" onclick="javascript: {$(this).find('div').toggleClass('active');}">
+                        <h5 class="pl-2 mb-0">Order by location</h5>
+                        <div class="ml-1 arrow-down"></div>
+                    </a>
+                    
+                    
 
-                <div class="row SERVICE-LOCATIONS">
+                    <div class="row SERVICE-LOCATIONS">
 
-                    <!-- AJAX CALL HERE -->
+                        <!-- AJAX CALL HERE -->
+
+                    </div>
 
                 </div>
+                
+            </div>
 
+            <div class="container mt-2">
 
 
                 <!-- Intro row TODO DYNAMIC-->
-                <h1 class="SERVICES-NAME">DYNAMIC</h1> 
-                <p>Quo usque tandem, Catilina, abuteris patientia nostra?</p>
+                <h2 class="mb-3"><span class="h-title SERVICES-NAME"></span></h2> 
 
                 <div class="row SERVICES">
 
 
                     <!-- AJAX CALL HERE -->
-
 
                 </div>
 

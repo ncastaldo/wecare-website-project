@@ -50,15 +50,12 @@ $(document).ready(function(){
     $("#relatedLocations").click(function(){
         if( $(".RELATED-LOCATIONS").is(":visible") ){
             $(".RELATED-LOCATIONS").slideUp();
-            $("#relatedLocations").text("Show");
         }else{
             $(".RELATED-LOCATIONS").slideDown();
-            $("#relatedLocations").text("Hide");
         }
     });
     
     $(".RELATED-LOCATIONS").hide();
-    $("#relatedLocations").text("Show");
 
 
 });
@@ -72,6 +69,8 @@ function loadJsonServiceIntoHtml(service){
     $(".SERVICE-IMAGE").attr("src", service.image);
     $(".SERVICE-PRACTICAL-INFO").html(service.practicalInfo);
     $(".SERVICE-TELEPHONE").text(service.telephone);
+    
+    $(".PEOPLE-LINK").attr("href","people.html#serviceId="+serviceId);
 
     $.ajax({
         method: "GET",
@@ -102,9 +101,8 @@ function loadJsonRelatedLocations(locations){
     for (let j = 0; j < locations.length; j++) {
 
         let location = locations[j];
-
-
-        el +='<div class="simple-card-container col-lg-2 col-md-3 col-sm-4 col-6 mb-4 text-center"><a class="card" href="location.html?id='+location.id+'"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>'
+        
+        el += '<div class="little-card-container text-center col-lg-2 col-md-3 col-sm-4 col-6 mb-3 animated fadeIn" style="animation-delay: '+(j+1)*0.1+'s;"><a class="card" href="location.html?id='+location.id+'"><div class="card-img-container"><img class="card-img-top" src="'+location.image+'"></div><div class="card-title-container"><h6 class="card-title link-custom">'+location.name+'</h6></div></a></div>';
 
     }
 

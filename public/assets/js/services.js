@@ -1,73 +1,62 @@
-var URL = function () {
-  // This function is anonymous, is executed immediately and 
-  // the return value is assigned to QueryString!
-  var query_string = {};
-  var query = window.location.hash.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
+function getURL() {
+    var query_string = {};
+    var query = window.location.hash.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
         // If first entry with this name
-    if (typeof query_string[pair[0]] === "undefined") {
-      query_string[pair[0]] = decodeURIComponent(pair[1]);
-        // If second entry with this name
-    } else if (typeof query_string[pair[0]] === "string") {
-      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-      query_string[pair[0]] = arr;
-        // If third or later entry with this name
-    } else {
-      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        if (typeof query_string[pair[0]] === "undefined") {
+            query_string[pair[0]] = decodeURIComponent(pair[1]);
+            // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+            var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+            query_string[pair[0]] = arr;
+            // If third or later entry with this name
+        } else {
+            query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        }
     }
-  }
-  return query_string;
-}();
+    return query_string;
+};
 
-
-let locationId;
+let URL = getURL();
+let locationId = URL.locationId;
+let jsonLocations;
 
 $(document).ready(function(){
 
     performServicesAjaxCalls();
-    
-    $.ajax({
-        method: "GET",
-        dataType: "json",
-        url: "/rest/locations",
-        error: function (request, error) {
-            console.log(request, error);
-        },
-        success: function(data){ loadJsonLocationsIntoHtml(data);}
-    });
-    
+
+    performLocationsAjaxCalls();
+
     $("#orderByLocation").click(function(){
         if( $(".SERVICE-LOCATIONS").is(":visible") ){
             $(".SERVICE-LOCATIONS").slideUp();
-            console.log("I should have hide");
+            $(this).removeClass("active");
         }else{
-            $(".SERVICE-LOCATIONS").slideDown();     
-            console.log("I should have shown");
+            $(".SERVICE-LOCATIONS").slideDown();
+            $(this).addClass("active");
         }
     });
+
     
     $(".SERVICE-LOCATIONS").hide();
+
 
 });
 
 function performServicesAjaxCalls(){
-    
-    locationId = URL.locationId;
-    
-    $(".SERVICES").empty();
-    
+
     $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/services" + ( (locationId===undefined) ? ("") : ("#locationId="+locationId) ),  //SERVER URL
+        url: "/rest/services" + ( (locationId===undefined) ? ("") : ("?locationId="+locationId) ),  //SERVER URL
         error: function (request, error) {
             console.log(request, error);
         },
         success: function(data){ loadJsonServicesIntoHtml(data);}
     });
-    
+
 }
 
 function loadJsonServicesIntoHtml(services){
@@ -81,35 +70,117 @@ function loadJsonServicesIntoHtml(services){
         el += getServiceHtml(service,i );
     }
 
-    $(".SERVICES").append(el);   
 
-}   
+    //This trick is used in order NOT to have problems/glitches with the loading of dynamic content :)
+    $(".SERVICES").css("minHeight", $(".SERVICES").height());
+    $(".SERVICES").empty();
+
+    $(".SERVICES").append(el);
+
+    $(".SERVICES").css("minHeight", 0);
+
+    addServicesHoverHandler();
+
+}
 
 function getServiceHtml(service, i ){
-    return '<div class="card-container col-lg-3 col-md-4 col-sm-6 col-12 mb-4 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a class="card" href="service.html?id='+service.id+'"><img class="card-img-top" src="'+service.image+'"><div class="card-body"><h5 class="card-title">'+service.name+'</h5><p class="card-description link-description">'+service.description1+'</p></div></a></div>';
+
+    return '<div class="card-container col-lg-3 col-md-4 col-sm-6 col-6 mb-4 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"><div class="card-description-container"><div class="card-description">'+service.description1+'</div></div></div><div class="card-title-container"><h5 class="card-title">'+service.name+'</h5></div></a></div>';
+
+}
+
+
+function addServicesHoverHandler(){
+    
+    $("div.card-description-container").hide();
+
+    $(".card").hover(
+        function(){
+            let el = $(this).find("div.card-description-container");
+            if(! el.is(":visible"))
+                el.slideDown(300);
+        },
+        function(){
+            let el = $(this).find("div.card-description-container");
+            el.slideUp(300);
+    });
+
+}
+
+function performLocationsAjaxCalls(){
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/locations",
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(data){ loadJsonLocationsIntoHtml(data);}
+    });
 }
 
 function loadJsonLocationsIntoHtml(locations){
-    
-    console.log(locations);
-    
-    let locationName;
+
+    jsonLocations = locations;
+
+    console.log("loading locations.." + locations);
+
     let el = "";
-    
-    el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn"><a class="card '+((locationId===undefined) ? ('active') : ('') ) +'" href="services.html#all" onclick="performServicesAjaxCalls()"><img class="card-img-top" src="../assets/img/locations/all.jpg"><h6 class="card-title pt-2 link-custom">All</h6></a></div>';
+
+    el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center animated fadeIn"><a class="card '+((locationId===undefined) ? ('active') : ('') ) +' SERVICE-LOCATION-EL" id="all" href="javascript:void(0)"><div class="card-img-container"><img class="card-img-top" src="../assets/img/locations/all.jpg"></div><div class="card-title-container"><h4 class="card-title link-custom">All</h4></div></a></div>';
 
     for (let i = 0; i < locations.length; i++) {
 
         let location = locations[i];
-        if(locationId == location.id)
-            locationName=location.name;
 
-        el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-3 col-4 mb-2 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s;"><a class="card '+((locationId==location.id) ? ('active') : ('') )+' " href="services.html#locationId='+location.id+'" onclick="performServicesAjaxCalls()"><img class="card-img-top" src="'+location.image+'"><h6 class="card-title pt-2 link-custom">'+location.name+'</h6></a></div>';
+        el += '<div class="little-card-container col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center animated fadeIn" style="animation-delay: '+(i+1)*0.1+'s;"><a class="card '+((locationId==location.id) ? ('active') : ('') )+' SERVICE-LOCATION-EL" id="'+location.id+'" href="javascript:void(0)"><div class="card-img-container"><img class="card-img-top" src="'+location.image+'"></div><div class="card-title-container"><h6 class="card-title link-custom">'+location.name+'</h6></div></a></div>';
 
     }
 
     $(".SERVICE-LOCATIONS").append(el);
-    
+
+    loadServicesName();
+
+}
+
+
+function loadServicesName(){
+
+    let locationName;
+
+    if(locationId===undefined){
+        locationName = undefined;
+    }else{
+        for(let i = 0; i<jsonLocations.length; i++){
+            if(jsonLocations[i].id == locationId){
+                locationName = jsonLocations[i].name;
+            }
+        }
+    }
+
     $(".SERVICES-NAME").text( (locationName===undefined)? ("All services") : ("Services in "+locationName) );
 
 }
+
+
+$(document).on('click', '.SERVICE-LOCATION-EL', function(ev){
+
+    ev.preventDefault();
+
+    $(".SERVICE-LOCATION-EL").removeClass("active");
+
+    //gets the current target id
+    if(ev.currentTarget.id === "all"){
+        locationId = undefined;
+        $("#all").addClass("active");
+    }else{
+        locationId = ev.currentTarget.id;
+        $("#"+locationId).addClass("active");
+    }
+
+    performServicesAjaxCalls();
+
+    loadServicesName();
+
+
+});
