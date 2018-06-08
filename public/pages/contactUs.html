@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>We care</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+
+        <!-- BOOTSTRAP minified CSS -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="../assets/css/animate.min.css">
+
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="../assets/css/main.css">
+
+        <!-- JQUERY minified JS -->
+        <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+
+        <!-- BOOTSTRAP minified JS -->
+        <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
+
+        <script type= "text/javascript" src="../assets/js/script.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="top-content">
+
+            <div class="container">
+
+                <div class="row upper-top-content">
+
+                    <a class="logo-home col-sm-8" href="home.html">
+                        <img src="../assets/img/logo/logo-3.svg">
+                    </a>
+
+                    <a class="btn btn-primary btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
+
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="container">
+
+                <nav class="navbar navbar-custom navbar-expand-md navbar-light">   
+
+                    <!-- To have the "3 lines"/"hamburger" button when there are small sizes-->
+                    <button class="navbar-toggler ml-auto custom-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse mr-auto" id="navbarMenu">
+
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item">
+                                <a href="home.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="whoWeAre.html" class="nav-link">Who we are</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="locations.html" class="nav-link">Locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="people.html" class="nav-link">People</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">News</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="contactUs.html" class="nav-link">Contact Us</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+
+            </div>
+
+        </div>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <main class="mb-0" role="main" style="background: linear-gradient(to bottom, #009490 0%, #00c9c3 100%);">
+
+            <div class="top-background animated fadeIn" id="services-bg">
+
+                <div class="container">
+                    <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
+                        <span class="top-background-title">Contact us
+                        </span>
+                    </h2> <!-- DYNAMIC HERE -->
+                </div>
+
+            </div>
+
+            <nav class="breadcrumb-navbar">
+                <div class="container">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                        <li class="breadcrumb-item active">Contact us</li>
+                    </ol>
+                </div>
+            </nav>    
+
+
+
+            <div class="container pb-4 d-flex justify-content-center">
+
+
+                <div class="col-md-8 col-12">
+
+                    <h1 class="h-title white text-center animated fadeInUp" style="animation-delay:0.3s;" ><span>Contact us</span></h1>
+
+                    <h5 class="h-title  white text-center animated fadeInUp" style="animation-delay:0.3s;" ><span>Got a question? Fill in the form below and submit it.<br>
+                        We will answer you as soon as possible!</span></h5>
+
+
+                    <form class="mt-4 animated fadeIn">
+                        <div class="form-group">
+                            <label class="mb-0"><h5 class="h-title white"><span>Full name</span></h5></label>
+                            <input type="text" class="form-control" placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-0"><h5 class="h-title white"><span>Email address</span></h5></label>
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-0"><h5 class="h-title white"><span>Phone number</span></h5></label>
+                            <input type="phone" class="form-control" placeholder="Phone number">
+                        </div>
+                        <label class="mb-0" for="inlineFormCustomSelectPref"><h5 class="h-title white"><span>Who you are</span></h5></label>
+                        <select class="mb-3 custom-select" id="inlineFormCustomSelectPref">
+                            <option selected value="1">Parent</option>
+                            <option value="2">Donator</option>
+                            <option value="3">Future collaborator</option>
+                            <option value="4">Other</option>
+                        </select>
+                        <div class="form-group">
+                            <label class="mb-0"><h5 class="h-title white"><span>Details</span></h5></label>
+                            <textarea class="form-control" placeholder="Details" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="height:50px; width:25%;">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+        </main>
+        <!-- /MAIN -->
+
+        <!-- FOOTER -->
+        <footer class="footer footer-custom">
+
+            <div class="container">
+
+                <nav class="navbar navbar-footer-custom navbar-expand">
+
+                    <div class="navbar-nav mr-auto">
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="fa fa-facebook"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="fa fa-twitter"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="fa fa-instagram"></a>
+                            </li>
+                        </ul>
+
+                    </div>   
+
+                    <div class="navbar-nav ml-auto">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Help Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>    
+
+                </nav>
+
+            </div>
+
+        </footer>
+        <!-- /FOOTER -->
+
+    </body>
+
+</html>
