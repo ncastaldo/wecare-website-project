@@ -218,7 +218,7 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-let myPort = process.env.PORT | 3000; // if port is not defined, it is 3000 (heroku VS locally)
+let myPort = process.env.PORT || 3000; // if port is not defined, it is 3000 (heroku VS locally)
 app.use(express.static(__dirname + "/public"));
 app.set("port", myPort);
 
