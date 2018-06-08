@@ -78,7 +78,7 @@
                             <li class="nav-item">
                                 <a href="locations.html" class="nav-link">Locations</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="people.html" class="nav-link">People</a>
                             </li>
                             <li class="nav-item">
@@ -105,13 +105,13 @@
         <!-- MAIN -->
         <main role="main">
 
-            <div class="top-background" id="person-bg">
+            <div class="top-background animated fadeIn" id="person-bg">
 
                 <div class="container">
-                    <h3>
+                    <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
                         <span class="top-background-title PERSON-FULLNAME">DYNAMIC<!-- DYNAMIC HERE -->
                         </span>
-                    </h3> <!-- DYNAMIC HERE -->
+                    </h2> <!-- DYNAMIC HERE -->
                 </div>
 
             </div>
@@ -128,15 +128,14 @@
 
             <div class="container">
 
-                <div class="row d-flex justify-content-center flex-row align-items-center">
+                <div class="row d-flex justify-content-center flex-row">
 
 
                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
 
                         <div class="d-flex justify-content-center">
 
-                            <img class="rounded-circle d-block p-4 PERSON-IMAGE" alt="" style="max-width: 400px;
-                                                                                               max-height: 400px;">
+                            <img class="rounded-circle d-block p-4 PERSON-IMAGE animated fadeIn" style="animation-delay:0.3s; max-width: 400px; max-height: 400px;">
 
                         </div>
 
@@ -157,56 +156,64 @@
                         <div class="pb-4">
                             <table class="table-person d-flex justify-content-center">
                                 <tr>
-                                    <td class="entry-info"><i>Name</i></td>
-                                    <td class="PERSON-FIRSTNAME">Meredith</td>
+                                    <td class="entry-info"><span class="h-title"><i>Name</i></span></td>
+                                    <td class="PERSON-FIRSTNAME">DYN</td>
                                 </tr>
                                 <tr>
-                                    <td class="entry-info"><i>Surname</i></td>
-                                    <td class="PERSON-LASTNAME">Gray</td>
+                                    <td class="entry-info"><span class="h-title"><i>Surname</i></span></td>
+                                    <td class="PERSON-LASTNAME">DYN</td>
                                 </tr>
                                 <tr id="last">
-                                    <td class="entry-info"><i>Profession</i></td>
-                                    <td class="PERSON-PROFESSION">Music Therapist</td>
+                                    <td class="entry-info"><span class="h-title"><i>Profession</i></span></td>
+                                    <td class="PERSON-PROFESSION">DYN</td>
                                 </tr>
                             </table>
+                        </div>
+                        
+                        
+
+
+                        <div class="container pt-md-4">
+
+                        
+                            <h3 class="mb-3"><span class="h-title"><i>Description</i></span></h3>
+                        
+                            <div class="PERSON-DESCRIPTION"><p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p>
+                            
+                            </div>
+                            
                         </div>
 
 
                         <div class="container mt-4">
 
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-12 col-sm-12 col-12 pr-3 pb-3">
-                                    <h3 style="color: #ff6600;"><i>Services:</i></h3>
-                                </div>
+                            <h3><span class="h-title"><i>Services:</i></span></h3>
+                            
+                            <div class="row PERSON-SERVICES">
 
 
-                                <div class="PERSON-SERVICES">
 
-                                    <div class="little-card-container col-lg-3 col-md-6 col-sm-4 col-6 text-center animated fadeIn">
+                                <!--div class="col-lg-3 col-md-6 col-sm-4 col-6 PERSON-SERVICES">
+
+                                    <div class="little-card-container text-center animated fadeIn">
                                         <a class="card" href="#">
                                             <img class="card-img-top" src="../assets/img/services/s001/001.jpg">  
                                             <h6 class="card-title pt-2">Speech and Language Services</h6>
                                         </a>
                                     </div>
 
-                                </div>
+                                </div-->
 
                             </div>
 
                         </div>
 
-
+                    </div>
 
                     </div>
 
 
-                    <div class="container pt-md-4">
-
-                        <h3 class="mb-3" style="font-weight: 100;"><i>Description</i></h3>
-                        <div class="PERSON-DESCRIPTION"><p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p></div>
-
-                    </div>
+                    
 
 
 
@@ -214,10 +221,6 @@
 
                 </div>
 
-
-
-
-            </div>
 
 
 

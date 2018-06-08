@@ -78,7 +78,7 @@
                             <li class="nav-item">
                                 <a href="locations.html" class="nav-link">Locations</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="people.html" class="nav-link">People</a>
                             </li>
                             <li class="nav-item">
@@ -105,23 +105,75 @@
         <!-- MAIN -->
         <main role="main">
 
+            <div class="top-background animated fadeIn" id="people-bg">
+
+                <div class="container">
+                    <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
+                        <span class="top-background-title PEOPLE-NAME">
+                        </span>
+                    </h2> <!-- DYNAMIC HERE -->
+                </div>
+
+            </div>
+
             <nav class="breadcrumb-navbar">
                 <div class="container">
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-                        <li class="breadcrumb-item active">All people</li>
+                        <li class="breadcrumb-item active PEOPLE-NAME"></li>
                     </ol>
                 </div>
             </nav>
+            
+            <div class="order-by-div">
 
-            <div class="container">
+                <div class="container pt-2">
+                    
+                    <a class="d-flex pb-2" id="orderByService" href="javascript:void(0)" onclick="javascript: {$(this).find('div').toggleClass('active');}">
+                        <h5 class="pl-2 mb-0">Order by service</h5>
+                        <div class="ml-1 arrow-down"></div>
+                    </a>
 
-                <!-- Intro row -->
-                <h1>People</h1>
-                <p>Quo usque tandem, Catilina, abuteris patientia nostra?</p>
+                    <div class="row PEOPLE-SERVICES">
+
+                        <!-- AJAX CALL HERE -->
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="container mt-2">
+
+                
+                <!-- Intro row TODO DYNAMIC-->
+                <h2 class="mb-3"><span class="h-title PEOPLE-NAME"></span></h2> 
 
                 <!-- People row -->
-                <div class="row PEOPLE">
+                <div class="row PEOPLE mt-2">
+
+
+                    <!--div class="people-card-container col-lg-4 col-md-6 col-sm-6 col-12 mb-4 text-center animated fadeIn">
+                        <a class="card" href="#">
+                            <div class="card-img-container">
+                                <img class="card-img-top" src="/assets/img/people/p001.jpg">
+                            </div>
+                            <div class="card-description-container">
+                                <h5 class="card-description">Meredith Gray</h5>
+                            </div>
+                            <div class="card-title-container">
+                                <h3 class="card-title">Music Therapist</h3>
+                            </div>
+                        </a>
+                    </div-->
+
+
+                    <!--div class="col-lg-3 col-md-4 col-sm-6 col-12 text-center mb-4 animated fadeIn">
+<a href="person.html?id='+person.id+'">
+<img class="rounded-circle img-fluid d-block p-4" src="'+person.image+'" alt=""><h4>'+person.firstname+' '+person.lastname+'<br>
+<small class="link-description">'+person.profession+'</small>
+</a></div-->
 
                     <!-- AJAX CALL HERE -->
 

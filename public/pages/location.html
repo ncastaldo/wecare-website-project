@@ -75,7 +75,7 @@
                             <li class="nav-item">
                                 <a href="services.html" class="nav-link">Services</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a href="locations.html" class="nav-link">Locations</a>
                             </li>
                             <li class="nav-item">
@@ -108,10 +108,10 @@
             <div class="top-background" id="location-bg">
 
                 <div class="container">
-                    <h3>
+                    <h2>
                         <span class="top-background-title LOCATION-NAME"><!-- DYNAMIC HERE -->
                         </span>
-                    </h3> <!-- DYNAMIC HERE -->
+                    </h2> <!-- DYNAMIC HERE -->
                 </div>
 
             </div>
@@ -136,7 +136,7 @@
 
                     <div class= "col-lg-4 col-md-5 col-sm-12 pr-md-2">
 
-                        
+
                         <img class="LOCATION-IMAGE d-none d-md-block animated fadeIn" style="max-width:100%;">
 
 
@@ -175,29 +175,35 @@
 
                         </div>
 
-                        <nav class="sidebar mt-2">
-                            <ul class="nav nav-tabs flex-column" id="tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="welcome-tab" data-toggle="tab" href="#welcome" role="tab">Welcome</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="practical-info-tab" href="#practical-info" data-toggle="tab" role="tab">Practical info</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="photogallery-tab" href="#photogallery" data-toggle="tab" role="tab">Photogallery</a>
-                                </li>
-                            </ul>
+                        <nav class="sidebar mt-3">
+
+                                <ul class="nav nav-tabs flex-column" id="tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="welcome-tab" data-toggle="tab" href="#welcome" role="tab">Welcome</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="practical-info-tab" href="#practical-info" data-toggle="tab" role="tab">Practical info</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="photogallery-tab" href="#photogallery" data-toggle="tab" role="tab">Photogallery</a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <li class="nav-item">
+                                        <a class="nav-link SERVICES-LINK">What here?</a>
+                                    </li>
+                                </ul>
+
                         </nav>
 
                     </div>
 
                     <div class="col-lg-8 col-md-7 col-sm-12 pl-md-0 pt-md-0 pt-sm-2 pt-2">
-                        <div class="tab-content pt-2 pr-3 pb-2 pl-3">
+                        <div class="tab-content pr-3 pb-2 pl-3">
 
 
                             <div class="tab-pane active" id="welcome" role="tabpanel">
 
-                                <h3>Welcome</h3>
+                                <h3><span class="h-title">Welcome</span></h3>
 
 
                                 <div>
@@ -208,7 +214,7 @@
 
                             <div class="tab-pane" id="practical-info" role="tabpanel">
 
-                                <h3>Practical info</h3>
+                                <h3><span class="h-title">Practical info</span></h3>
                                 <div class="LOCATION-PRACTICAL-INFO"></div>
 
                             </div>
@@ -216,7 +222,7 @@
 
                             <div class="tab-pane" id="photogallery" role="tabpanel">
 
-                                <h3 class="mb-3">Some photos</h3>
+                                <h3 class="mb-3"><span class="h-title">Some photos</span></h3>
 
                                 <div class="container">
                                     <div class="row LOCATION-PHOTOGALLERY">
@@ -233,10 +239,6 @@
                     </div>
 
                 </div>
-
-                <hr>
-
-                <h6 class="mt-3 mb-3">Go to the <a class="SERVICES-BUTTON" href="#"><div class="btn btn-primary pt-1">services</div></a> offered in this location</h6>
 
                 <script src="../assets/js/location.js"></script>
 

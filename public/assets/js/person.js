@@ -21,23 +21,32 @@ var URL = function () {
     return query_string;
 }();
 
+let personId = URL.id;
+
 $(document).ready(function(){
 
-    $.ajax({
-        method: "GET",
-        dataType: "json",
-        url: "/rest/people/"+URL.id,
-        error: function (request, error) {
-            console.log(request, error);
-        },
-        success: function(json){ loadJsonIntoHtml(json);}
-    });
+    performAjaxPersonCall();
+    
+    performAjaxServicesCall();
     
 });
 
-function loadJsonIntoHtml(person){
+function performAjaxPersonCall(){
     
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/people/"+personId,
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(json){ loadJsonPersonIntoHtml(json);}
+    });
+    
+}
 
+function loadJsonPersonIntoHtml(person){
+    
     $(".PERSON-FIRSTNAME").text(person.firstname);
     $(".PERSON-LASTNAME").text(person.lastname);
     $(".PERSON-FULLNAME").text(person.firstname + " " + person.lastname);
@@ -45,33 +54,38 @@ function loadJsonIntoHtml(person){
     $(".PERSON-DESCRIPTION").html(person.description);
     $(".PERSON-IMAGE").attr("src", person.image);
 
-    let el= "";
+}
+
+function performAjaxServicesCall(){
     
-    /* TODO photogallery
     $.ajax({
-        url : currentLocation.photogallery,
+        method: "GET",
+        dataType: "json",
+        url: "/rest/services?personId="+personId,
         error: function (request, error) {
             console.log(request, error);
         },
-        success: function (data) {
-            $(data).find("a.contains(jpg)" ).each(function () {
-                let filename = this.href.replace(window.location.host, "").replace("http:///", "");
-                console.log(filename);
-            //$("body").append($("<img src=" + dir + filename + "></img>"));
-            });
-        }
-    });*/
-    
-    //el += '<div class="col-lg-4 col-md-6 col-12 d-block mb-4 h-100"><img class="img-fluid img-thumbnail" src="'+currentLocation.photogallery+ val+'" alt=""></div>';
-    
-    //$(".LOCATION-PHOTOGALLERY").append(el);        
-
-        /*
-    $('.SERVICES-BUTTON').click(function(){
-        console.log("hey");
-        window.location.href = '/pages/services.html?locationId='+currentLocation.id;
+        success: function(json){ loadJsonServicesIntoHtml(json);}
     });
     
-    */
+}
 
+function loadJsonServicesIntoHtml(services){
+    
+    let el = "";
+    
+    console.log(services.length)
+
+    for (let i = 0; i < services.length; i++) {
+
+        let service = services[i];
+
+        el += '<div class="little-card-container text-center col-lg-3 col-md-6 col-sm-4 col-6 mb-3 animated fadeIn" style="animation-delay: '+(i+1)*0.1+'s;"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"></div><div class="card-title-container"><h6 class="card-title link-custom">'+service.name+'</h6></div></a></div>';
+
+        console.log("hci")
+        
+    }
+    
+    $(".PERSON-SERVICES").append(el);
+    
 }
