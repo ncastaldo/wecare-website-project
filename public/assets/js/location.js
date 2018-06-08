@@ -51,9 +51,29 @@ function loadJsonIntoHtml(currentLocation){
     $(".LOCATION-ADDRESS").attr("href", "http://maps.google.com/?daddr="+ currentLocation.address);
     $(".LOCATION-ADDRESS span").text(currentLocation.address);
 
-    let el= "";
     
-    $('.SERVICES-BUTTON').attr("href","services.html?locationId="+currentLocation.id);
+    $('.SERVICES-LINK').attr("href","services.html#locationId="+currentLocation.id);
+    
+    $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/locations/" + currentLocation.id + "/photogallery", //SERVER URL
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(photogallery){
+        
+            let el= "";
+            for(let i=0; i<photogallery.length; i++){
+                el += '<div class="col-lg-4 col-md-6 col-12 d-block mb-4 h-100"><a href ="'+photogallery[i].image+'" target="_blank"><img class="img-fluid img-thumbnail" src="'+photogallery[i].image+'" alt=""></a></div>'
+                }
+            $(".LOCATION-PHOTOGALLERY").append(el);   
+        
+        }
+
+    });   
+    
+    
     
     
     /* TODO photogallery
