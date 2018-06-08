@@ -48,7 +48,7 @@ function initDatabaseConnection(){
             }
         });
     }else{
-        sqlDb = sqlDbFactory({
+        sqlDb = knex({
             debug: true,
             client: "pg",
             connection: process.env.DATABASE_URL,
