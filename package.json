@@ -1,25 +1,22 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "This repository will be updated during our hands on lectures with a small app to manage pets. We suggest to use it as a starting point (fork) for your project once we finished.",
   "main": "index.js",
+  "repository": "https://bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project",
+  "author": "Nicola e Robert",
+  "engines": {
+    "node": "7.5.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.17.1",
+    "express": "4.15.2",
+    "knex": "0.13.0",
+    "lodash": "4.17.4",
+    "pg": "6.2.3",
+    "sqlite3": "3.1.8"
+  },
   "scripts": {
     "start": "node ./index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://polimi-hyp-2018-10472465@bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project#readme",
-  "dependencies": {
-    "express": "^4.16.3",
-    "knex": "^0.14.6",
-    "lodash": "^4.17.10",
-    "mysql": "^2.15.0",
-    "nodash": "^0.12.0",
-    "pg": "^7.4.3",
-    "sqlite": "^2.9.2"
   }
 }
