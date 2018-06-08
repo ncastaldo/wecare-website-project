@@ -51,7 +51,7 @@ function performPeopleAjaxCalls(nextMethod){
     return $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/people" + ( (serviceId===undefined) ? ("") : ("?serviceId="+serviceId) ), //SERVER URL
+        url: (serviceId===undefined) ? ("/rest/people") : ("/rest/services/"+serviceId+"/people"), //SERVER URL
         error: function (request, error) {
             console.log(request, error);
         },

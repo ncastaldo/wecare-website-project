@@ -234,33 +234,17 @@ app.set("port", myPort);
 app.get("/rest/people", function(req, res){
     let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
     let limit = parseInt(_.get(req, "query.limit", 5));
-
-    let serviceId = parseInt(_.get(req, "query.serviceId", -1));
-
-    if(serviceId<0){
-        let myQuery = sqlDb("people")
+    let myQuery = sqlDb("people")
         .offset(start)
         .limit(limit)
         .orderBy("lastname", "firstname")
         .then( (person) => {
-            res.send(JSON.stringify(person));
+            res.send(
+                JSON.stringify(person));
         });
-    }else{
-        let myQuery = sqlDb
-        .select("people.id","people.firstname","people.lastname","people.image", "people.profession")
-        .from("people")
-        .leftJoin("people_services", "people.id", "people_services.personId")
-        .where("people_services.serviceId", serviceId)
-        .orderBy("people.lastname","people.firstname")
-        .then( (people) => {
-            res.send(JSON.stringify(people));
-        });
-    }
-
 });
 
 app.get("/rest/people/:id", function(req,res) {
-
     let personId = req.params.id;
     let myQuery = sqlDb("people")
     .where("id", personId)
@@ -268,10 +252,20 @@ app.get("/rest/people/:id", function(req,res) {
     .then( (person) => {
         res.send(JSON.stringify(person));
     });
-
 });
 
-
+app.get("/rest/people/:id/services", function(req,res) {
+    let personId = req.params.id;
+    let myQuery = sqlDb
+        .select("services.id","services.name","services.image")
+        .from("services")
+        .leftJoin("people_services", "services.id", "people_services.serviceId")
+        .where("people_services.personId", personId)
+        .orderBy("services.name")
+        .then( (service) => {
+            res.send(JSON.stringify(service));
+        });
+});
 
 
 // LOCATIONS
@@ -279,32 +273,13 @@ app.get("/rest/people/:id", function(req,res) {
 app.get("/rest/locations", function(req, res){
     let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
     let limit = parseInt(_.get(req, "query.limit", 5));
-
-    let serviceId = parseInt(_.get(req, "query.serviceId", -1));
-
-    if(serviceId<0){
-        let myQuery = sqlDb("locations")
+    let myQuery = sqlDb("locations")
         .offset(start)
         .limit(limit)
         .orderBy("name")
         .then( (location) => {
             res.send(JSON.stringify(location));
         });
-
-    }else{
-
-        let myQuery = sqlDb
-        .select("locations.id","locations.name","locations.image", "locations.city")
-        .from("locations")
-        .leftJoin("locations_services", "locations.id", "locations_services.locationId")
-        .where("locations_services.serviceId", serviceId)
-        .orderBy("locations.name")
-        .then( (location) => {
-            res.send(JSON.stringify(location));
-        });
-
-    }
-
 });
 
 app.get("/rest/locations/:id", function(req, res){
@@ -320,28 +295,17 @@ app.get("/rest/locations/:id", function(req, res){
 app.get("/rest/locations/:id/photogallery", function(req, res){
     let locationId = req.params.id;
     let myQuery = sqlDb.select("image")
-    .from("photogallery")
-    .where("id", locationId)
-    .andWhere("type", "location")
-    .then( (image) => {
-        res.send(JSON.stringify(image));
-    });
+        .from("photogallery")
+        .where("id", locationId)
+        .andWhere("type", "location")
+        .then( (image) => {
+            res.send(JSON.stringify(image));
+        });
 });
 
-
-
-// SERVICES
-
-app.get("/rest/services", function(req, res){
-
-    let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
-    let limit = parseInt(_.get(req, "query.limit", 5));
-
-    let locationId = parseInt(_.get(req, "query.locationId", -1));
-    let personId = parseInt(_.get(req, "query.personId", -1));
-
-    if(locationId > 0){
-        let myQuery = sqlDb
+app.get("/rest/locations/:id/services", function(req, res){
+    let locationId = req.params.id;
+    let myQuery = sqlDb
         .select("services.id","services.name","services.image", "services.description1")
         .from("services")
         .leftJoin("locations_services", "services.id", "locations_services.serviceId")
@@ -350,51 +314,70 @@ app.get("/rest/services", function(req, res){
         .then( (service) => {
             res.send(JSON.stringify(service));
         });
+});
 
-    }else if(personId > 0){
+        
+// SERVICES
 
-        let myQuery = sqlDb
-        .select("services.id","services.name","services.image")
-        .from("services")
-        .leftJoin("people_services", "services.id", "people_services.serviceId")
-        .where("people_services.personId", personId)
-        .orderBy("services.name")
-        .then( (service) => {
-            res.send(JSON.stringify(service));
-        });
-
-    }else{
-
-        let myQuery = sqlDb("services")
+app.get("/rest/services", function(req, res){
+    let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
+    let limit = parseInt(_.get(req, "query.limit", 5));
+    let myQuery = sqlDb("services")
         .offset(start)
         .limit(limit)
         .orderBy("name")
         .then( (service) => {
             res.send(JSON.stringify(service));
         });
-    }
 });
 
 
 app.get("/rest/services/:id", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb("services")
-    .where("id", serviceId)
-    .first()
-    .then( (service) => {
-        res.send(JSON.stringify(service));
-    });
+        .where("id", serviceId)
+        .first()
+        .then( (service) => {
+            res.send(JSON.stringify(service));
+        });
 });
 
 app.get("/rest/services/:id/photogallery", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb.select("image")
-    .from("photogallery")
-    .where("id", serviceId)
-    .andWhere("type", "service")
-    .then( (image) => {
-        res.send(JSON.stringify(image));
-    });
+        .from("photogallery")
+        .where("id", serviceId)
+        .andWhere("type", "service")
+        .then( (image) => {
+            res.send(JSON.stringify(image));
+        });
+});
+
+app.get("/rest/services/:id/locations", function(req, res){
+    let serviceId = req.params.id;
+    let myQuery = sqlDb
+        .select("locations.id","locations.name","locations.image", "locations.city")
+        .from("locations")
+        .leftJoin("locations_services", "locations.id", "locations_services.locationId")
+        .where("locations_services.serviceId", serviceId)
+        .orderBy("locations.name")
+        .then( (location) => {
+            res.send(JSON.stringify(location));
+        });
+});
+
+app.get("/rest/services/:id/people", function(req, res){
+    let serviceId = req.params.id;
+    let myQuery = sqlDb
+        .select("people.id","people.firstname","people.lastname","people.image", "people.profession")
+        .from("people")
+        .leftJoin("people_services", "people.id", "people_services.personId")
+        .where("people_services.serviceId", serviceId)
+        .orderBy("people.lastname","people.firstname")
+        .then( (people) => {
+            res.send(JSON.stringify(people));
+        });
+    
 });
 
 

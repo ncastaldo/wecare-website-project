@@ -61,7 +61,7 @@ function performAjaxServicesCall(){
     $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/services?personId="+personId,
+        url: "/rest/people/"+personId+"/services",
         error: function (request, error) {
             console.log(request, error);
         },

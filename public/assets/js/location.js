@@ -72,35 +72,5 @@ function loadJsonIntoHtml(currentLocation){
         }
 
     });   
-    
-    
-    
-    
-    /* TODO photogallery
-    $.ajax({
-        url : currentLocation.photogallery,
-        error: function (request, error) {
-            console.log(request, error);
-        },
-        success: function (data) {
-            $(data).find("a.contains(jpg)" ).each(function () {
-                let filename = this.href.replace(window.location.host, "").replace("http:///", "");
-                console.log(filename);
-            //$("body").append($("<img src=" + dir + filename + "></img>"));
-            });
-        }
-    });*/
-    
-    //el += '<div class="col-lg-4 col-md-6 col-12 d-block mb-4 h-100"><img class="img-fluid img-thumbnail" src="'+currentLocation.photogallery+ val+'" alt=""></div>';
-    
-    //$(".LOCATION-PHOTOGALLERY").append(el);        
-
-        /*
-    $('.SERVICES-BUTTON').click(function(){
-        console.log("hey");
-        window.location.href = '/pages/services.html?locationId='+currentLocation.id;
-    });
-    
-    */
 
 }

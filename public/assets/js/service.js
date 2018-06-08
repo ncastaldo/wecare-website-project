@@ -39,7 +39,7 @@ $(document).ready(function(){
     $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/locations?serviceId=" + serviceId, //SERVER URL
+        url: "/rest/"+ serviceId +"/locations", //SERVER URL
         error: function (request, error) {
             console.log(request, error);
         },

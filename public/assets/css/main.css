@@ -271,7 +271,7 @@ button[aria-expanded="false"].custom-toggler{
 .carousel-item .carousel-caption{
     background-color: #e9ecefe6;
     max-height: none;
-    width: 250px;
+    max-width: 250px;
     bottom: 40px;
     margin-left: auto;
     margin-right: auto;

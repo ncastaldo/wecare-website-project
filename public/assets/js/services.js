@@ -50,7 +50,7 @@ function performServicesAjaxCalls(){
     $.ajax({
         method: "GET",
         dataType: "json",
-        url: "/rest/services" + ( (locationId===undefined) ? ("") : ("?locationId="+locationId) ),  //SERVER URL
+        url: (locationId===undefined) ? ("/rest/services") : ("/rest/locations/"+locationId+"/services" ),  //SERVER URL
         error: function (request, error) {
             console.log(request, error);
         },
