@@ -272,18 +272,14 @@ button[aria-expanded="false"].custom-toggler{
     background-color: #e9ecefe6;
     max-height: none;
     max-width: 250px;
-    bottom: 40px;
+    bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
 }
 
-.carousel-item .carousel-caption *{
-    color: black;
-}
-
 .carousel-indicators{  
-    margin-bottom: 0px;
+    margin-bottom: -40px;
 }
 
 .carousel-indicators li {
@@ -336,25 +332,6 @@ padding-top: 65px;
     background-color: #e9ecef;
 }
 
-.card-container a:hover .card-img-top{
-    transform: scale(1) !important; /* do not scale */
-}
-
-.card-description-container{
-    position: absolute;
-    bottom: 30%;
-    height: 70%;
-    width: 100%;
-    background-color: #e85c00cc;
-    display: flex;
-}
-
-.card-description{
-    margin: auto;
-    color: #ffffff;
-}
-
-
 
 /* ----- SERVICE + LOCATION ----- */
 
@@ -405,12 +382,15 @@ padding-top: 65px;
 .people-card-container{
     display: flex;
     align-items: stretch;
+    
 }
 
 .card{
     border: none;
     height: 100%;
     box-shadow: 0 0 15px #dddddd;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-title-container{
@@ -441,15 +421,50 @@ a:hover .card-img-container .card-img-top{
     transform: scale(1.1);
 }
 
+/*  normal cards */
+
+.card-container .card{
+    max-width: 300px;
+}
 
 
+.card-container a:hover .card-img-top{
+    transform: scale(1) !important; /* do not scale */
+}
 
+.card-container .card-description-container{
+    position: absolute;
+    bottom: 30%;
+    height: 70%;
+    width: 100%;
+    background-color: #e85c00cc;
+    display: flex;
+}
 
-/* simple cards */
+.card-container .card-description{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: auto;
+    color: #ffffff;
+}
 
-.simple-card-container .card{
+/* home cards */
 
-    border: none;
+.home-card-container .card{
+    max-width: 400px;
+}
+
+.home-card-container .card-img-container {
+    height: 75%;
+}
+
+.home-card-container .card-title-container {
+    height: 25%;
+}
+
+.home-card-container .card-description-container{
+    bottom: 25%;
+    height: 75%;
 }
 
 
@@ -464,8 +479,6 @@ a:hover .card-img-container .card-img-top{
     /*height: 100px;*/
     max-width: 180px;
     border: none !important;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .little-card-container .card-title-container {
@@ -504,7 +517,7 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-/* backsground */
+/* background */
 
 .top-background {
     display: flex;
