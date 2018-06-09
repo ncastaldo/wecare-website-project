@@ -421,18 +421,7 @@ a:hover .card-img-container .card-img-top{
     transform: scale(1.1);
 }
 
-/*  normal cards */
-
-.card-container .card{
-    max-width: 300px;
-}
-
-
-.card-container a:hover .card-img-top{
-    transform: scale(1) !important; /* do not scale */
-}
-
-.card-container .card-description-container{
+.card-description-container{
     position: absolute;
     bottom: 30%;
     height: 70%;
@@ -441,11 +430,23 @@ a:hover .card-img-container .card-img-top{
     display: flex;
 }
 
-.card-container .card-description{
+.card-description{
     padding-left: 5%;
     padding-right: 5%;
     margin: auto;
     color: #ffffff;
+}
+
+/*  normal cards */
+
+.card-container .card{
+    max-width: 300px;
+}
+
+
+
+.card-container a:hover .card-img-top{
+    transform: scale(1) !important; /* do not scale */
 }
 
 /* home cards */
