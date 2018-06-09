@@ -2,17 +2,18 @@ let sidebar;
 let sticky;
 
 $(document).ready(function(){
-    
+
     sidebar = $(".sidebar");
+
+
     sticky = sidebar.offset().top - 17;
-    
+
     window.onscroll = function() {
         stickIt();
         activateNavItem();
     };
-    
+
     window.onresize = function() {
-        console.log(sticky);
         stickIt();
     };
 
@@ -21,7 +22,7 @@ $(document).ready(function(){
 
 function stickIt() {
     let w = sidebar.parent().width();
-    if (window.pageYOffset >= sticky) {
+    if (window.pageYOffset >= sticky && window.matchMedia("(min-width: 768px)").matches) {
         sidebar.addClass("sticky pt-3");
     } else {
         sidebar.removeClass("sticky pt-3");
@@ -33,7 +34,7 @@ function stickIt() {
 
 
 function activateNavItem(event){
-    
+
     let scrollPos = $(document).scrollTop();
     scrollPos -= $(".content-wwa").offset().top / 2;
     $('.sidebar .nav-link').each(function () {
