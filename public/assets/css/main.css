@@ -36,46 +36,41 @@ main {
     margin-bottom: 10px; /* between main and footer */
 }
 
+
+
+/* a */
+
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: #009490;
 }
-
-a.active,
 a:hover{
-    color: #e85c00 !important;
+    color: #e85c00;
+    text-decoration: none;
 }
 
-a .link-description{
-    color: #000000 !important;
-}
 
-a:hover .link--description{
-    color: #000000 !important;
-}
-
+/* nav-items & nav-links */
 
 .nav-link{
     border: none !important;
-    color: #009490 !important;
     border-radius: 0px;
-}
+} 
 
 .nav-item.active .nav-link,
-.nav-item:hover .nav-link {
-    color: #e85c00 !important;
-
-    /*box-shadow: inset 0 -3px #e85c00; /* to have the line effect*/
+.nav-item:hover .nav-link{
+    color: #e85c00;
 }
+
+
 
 .btn{
     background-color: #009490;
-    border: none !important;
-    color: #ffffff !important;
+    border: none;
+    color: #ffffff;
 }
 
 .btn:hover{
-    color: #ffffff !important;
     background-color: #e85c00;
 }
 
@@ -91,7 +86,6 @@ a:hover .link--description{
 .h-title.white{
     color: #ffffff;
 }
-
 
 
 
@@ -149,14 +143,19 @@ a:hover .arrow-down:after{
 }
 
 .upper-top-content{
-    margin-top: 5px;
     display: flex;
     align-items: flex-end;
 }
 
 /* Logo home */
+
+.logo-home{
+    padding: 5px;
+}
+
 .logo-home img{
-    height: 120px;
+    height: 110px;
+    max-width: 300px;
 }
 
 /* Logo donate */
@@ -170,24 +169,6 @@ a:hover .arrow-down:after{
 
 
 /* Navbar */
-.navbar-custom{
-    background-color: #ffffff !important;
-}
-
-.custom-toggler{
-    outline: none !important;
-}
-
-button[aria-expanded="true"].custom-toggler{
-    transform: rotate(180deg);
-    transition: transform .25s ease;
-}
-
-button[aria-expanded="false"].custom-toggler{
-    transform: rotate(0deg);
-    transition: transform .25s ease;
-}
-
 
 .navbar-active{
     outline: none !important;
@@ -222,7 +203,33 @@ button[aria-expanded="false"].custom-toggler{
 }
 
 
+.nav-item.disable .nav-link{
+    color: gray !important;
+}
+
+.navbar-custom .nav-item.disable{
+    box-shadow: inset 0 0;
+}
+
+
+
+
 /* Navbar toggler */
+
+.custom-toggler{
+    outline: none !important;
+}
+
+button[aria-expanded="true"].custom-toggler{
+    transform: rotate(180deg);
+    transition: transform .25s ease;
+}
+
+button[aria-expanded="false"].custom-toggler{
+    transform: rotate(0deg);
+    transition: transform .25s ease;
+}
+
 .custom-toggler.navbar-toggler{
     border-color: #009490;
 }
@@ -382,7 +389,7 @@ padding-top: 65px;
 .people-card-container{
     display: flex;
     align-items: stretch;
-    
+
 }
 
 .card{
@@ -439,7 +446,7 @@ a:hover .card-img-container .card-img-top{
 
 /*  normal cards */
 
-.card-container .card{
+.card{
     max-width: 300px;
 }
 
@@ -473,7 +480,7 @@ a:hover .card-img-container .card-img-top{
 /* little cards */
 
 .little-card-container{
-    height: 120px;
+    height: 80px;
 }
 
 .little-card-container .card{
@@ -483,11 +490,11 @@ a:hover .card-img-container .card-img-top{
 }
 
 .little-card-container .card-title-container {
-    height: 50%;
+    height: 100%;
 }
 
 .little-card-container .card-img-container {
-    height: 50%;
+    height: 0%;
 }
 
 .little-card-container .card-img-top{
@@ -499,6 +506,12 @@ a:hover .card-img-container .card-img-top{
 
     .little-card-container {
         height: 170px;
+    }
+    .little-card-container .card-title-container {
+        height: 50%;
+    }
+    .little-card-container .card-img-container {
+        height: 50%;
     }
 
 
@@ -596,7 +609,7 @@ a:hover .card-img-container .card-img-top{
 /* people */
 
 .people-card-container{
-    height: 360px; 
+    height: 300px;
 }
 
 .people-card-container .card{
@@ -614,43 +627,22 @@ a:hover .card-img-container .card-img-top{
 .people-card-container .card-img-container .card-img-top{
     transform: scale(0.85);
 
-    /* It is 62.5% of  ".people-card-container [height]" */
+    /* It is 80% of  ".people-card-container [height]" */
     /* to make image as a perfect circle */
-    width: 288px;
-    height: 288px;
+    width: 240px;
+    height: 240px;
     border-radius: 100%;
 
     box-shadow: 0 0 15px #dddddd;
 }
 
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) SM */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    .people-card-container{
-        height: 300px; 
-    }
-    .people-card-container .card-img-container .card-img-top{
-        width: 240px;
-        height: 240px;
-    }
-}
 
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) (XS) */
-@media only screen and (max-width: 479px) {
-    .people-card-container{
-        height: 420px; 
-    }
-    .people-card-container .card-img-container .card-img-top{
-        width: 336px;
-        height: 336px;
-    }
+.people-card-container .card-title-container{
+    height: 20%;
 }
 
 .people-card-container .card:hover .card-img-container .card-img-top{
     transform: scale(0.95);
-}
-
-.people-card-container .card-title-container{
-    height: 20%;
 }
 
 .people-card-container .card-description-container{
@@ -658,7 +650,7 @@ a:hover .card-img-container .card-img-top{
     bottom: 25%;
     height: 15%;
     width: 100%;
-    background: linear-gradient(to right, #ffffffca 10%,#e85c00ca 35%,#e85c00ca 65%,#ffffffca 90%,#ffffffca 100%);
+    background: linear-gradient(to right, #ffffffca 10%,#e85c00ca 35%,#e85c00ca 65%,#ffffffca 90%);
 }
 
 .people-card-container .card-description-container .card-description{
@@ -668,11 +660,52 @@ a:hover .card-img-container .card-img-top{
 
 
 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .people-card-container{
+        height: 300px; 
+    }
+    .people-card-container .card-img-container .card-img-top{
+        width: 240px;
+        height: 240px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .people-card-container{
+        height: 336px;
+    }
+    .people-card-container .card-img-container{
+        height: 75%;
+    }
+    .people-card-container .card-img-container .card-img-top{
+        width: 252px;
+        height: 252px;
+    }
+    .people-card-container .card-title-container{
+        height: 25%;
+    }
+    .people-card-container .card-description-container{
+        bottom: 30%;
+    }
+}
+
+
+
+
+
 
 
 
 
 /* person */
+
+.image-person{
+    max-width: 300px; 
+    max-height: 300px;
+}
 
 .table-person tr td{
     padding-left: 10px;
