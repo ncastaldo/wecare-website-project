@@ -80,7 +80,7 @@ function loadJsonServicesIntoHtml(services){
 
         let service = services[i];
 
-        el += '<div class="little-card-container text-center col-lg-3 col-md-6 col-sm-4 col-6 mb-3 animated fadeIn" style="animation-delay: '+(i+1)*0.1+'s;"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"></div><div class="card-title-container"><h6 class="card-title link-custom">'+service.name+'</h6></div></a></div>';
+        el += '<div class="little-card-container text-center col-lg-2 col-md-3 col-sm-4 col-6 mb-3 animated fadeIn" style="animation-delay: '+(i+1)*0.1+'s;"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"></div><div class="card-title-container"><h6 class="card-title link-custom">'+service.name+'</h6></div></a></div>';
 
         console.log("hci")
         
