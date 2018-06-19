@@ -85,7 +85,7 @@ function loadJsonServicesIntoHtml(services){
 
 function getServiceHtml(service, i ){
 
-    return '<div class="card-container col-lg-3 col-md-4 col-sm-6 col-6 mb-4 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"><div class="card-description-container"><div class="card-description">'+service.description1+'</div></div></div><div class="card-title-container"><h5 class="card-title">'+service.name+'</h5></div></a></div>';
+    return '<div class="card-container col-lg-3 col-md-4 col-sm-6 col-12 mb-4 text-center animated fadeIn" style="animation-delay: '+i*0.1+'s"><a class="card" href="service.html?id='+service.id+'"><div class="card-img-container"><img class="card-img-top" src="'+service.image+'"><div class="card-description-container"><div class="card-description">'+service.description1+'</div></div></div><div class="card-title-container"><h5 class="card-title">'+service.name+'</h5></div></a></div>';
 
 }
 
