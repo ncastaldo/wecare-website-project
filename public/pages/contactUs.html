@@ -45,7 +45,7 @@
                         <img src="../assets/img/logo/logo-3.svg">
                     </a>
 
-                    <a class="btn btn-primary btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
+                    <a class="btn btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
 
                 </div>
 
@@ -55,7 +55,7 @@
 
             <div class="container">
 
-                <nav class="navbar navbar-custom navbar-expand-md navbar-light">   
+                <nav class="navbar navbar-custom navbar-expand-md">   
 
                     <!-- To have the "3 lines"/"hamburger" button when there are small sizes-->
                     <button class="navbar-toggler ml-auto custom-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -81,11 +81,11 @@
                             <li class="nav-item">
                                 <a href="people.html" class="nav-link">People</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Events</a>
+                            <li class="nav-item disable">
+                                <a class="nav-link">Events</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">News</a>
+                            <li class="nav-item disable">
+                                <a class="nav-link">News</a>
                             </li>
                             <li class="nav-item active">
                                 <a href="contactUs.html" class="nav-link">Contact Us</a>
@@ -134,10 +134,18 @@
                     <br>
                     <br>
 
-                    <h1 class="h-title white text-center animated fadeInUp" style="animation-delay:0.3s;" ><span>Contact us</span></h1>
+                    <h1 class="h-title white text-center animated fadeInUp" style="animation-delay:0.3s;">
+                        <span>Contact us<br></span>
+                    </h1>
 
-                    <h5 class="h-title  white text-center animated fadeInUp" style="animation-delay:0.3s;" ><span>Got a question? Fill in the form below and submit it.<br>
-                        We will answer you as soon as possible!</span></h5>
+                    <h5 class="h-title  white text-center animated fadeInUp" style="animation-delay:0.3s;">
+                        <span>Got a question?<br>
+                            Fill in the form below and submit it.<br>
+                            We will answer you as soon as possible!</span></h5>
+
+                    <h6 class="h-title white text-center animated fadeInUp" style="animation-delay:0.3s;">
+                        <span><br>- entries marked with symbol * are required -</span>
+                    </h6>
 
 
                     <br>
@@ -147,39 +155,41 @@
                     <form class="mt-4 animated fadeIn">
 
                         <div class="form-group">
-                            <label class="mb-0"><h5 class="h-title white"><span>Full name</span></h5></label>
-                            <input type="text" class="form-control" placeholder="Full name...">
+                            <label class="mb-0"><h5 class="h-title white"><span>Full name*</span></h5></label>
+                            <input type="text" required="required" class="form-control" placeholder="Full name...">
                         </div>
 
                         <div class="form-group">
-                            <label class="mb-0"><h5 class="h-title white"><span>Email address</span></h5></label>
-                            <input type="email" class="form-control" placeholder="Email...">
+                            <label class="mb-0"><h5 class="h-title white"><span>Email address*</span></h5></label>
+                            <input type="email" required="required" class="form-control" placeholder="Email...">
                         </div>
 
                         <div class="form-group">
-                            <label class="mb-0"><h5 class="h-title white"><span>Phone number</span></h5></label>
-                            <input type="phone" class="form-control" placeholder="Phone number...">
+                            <label class="mb-0"><h5 class="h-title white"><span>Phone number*</span></h5></label>
+                            <input type="phone" required="required" class="form-control" placeholder="Phone number...">
                         </div>
 
                         <div class="form-group">
                             <label class="mb-0" for="inlineFormCustomSelectPref">
-                                <h5 class="h-title white"><span>Who you are</span></h5>
+                                <h5 class="h-title white"><span>Who you are*</span></h5>
                             </label>
-                            <select class="mb-0 custom-select" id="inlineFormCustomSelectPref">
-                                <option selected value="1">Parent</option>
-                                <option value="2">Donator</option>
-                                <option value="3">Future collaborator</option>
-                                <option value="4">Other</option>
+                            <select required="required" class="mb-0 custom-select" id="inlineFormCustomSelectPref">
+                                <option value="">Select...</option>
+                                <option value="Parent">Parent</option>
+                                <option value="Donator">Donator</option>
+                                <option value="Future collaborator">Future collaborator</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>  
 
                         <div class="form-group">
                             <label class="mb-0"><h5 class="h-title white"><span>Details</span></h5></label>
-                            <textarea class="form-control" placeholder="Details..." rows="5"></textarea>
+                            <textarea class="form-control mb-1" maxlength="500" placeholder="Details..." rows="5"></textarea>
+                            <h6 class="h-title white"><span>Max length: 500 characters</span></h6>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="height:50px; min-width:25%; ">Submit</button>
-                    
+
+                        <button type="submit" class="btn btn-primary" style="height:50px; width:100px; ">Submit</button>
+
                     </form>
 
 
@@ -230,11 +240,11 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Help Us</a>
+                            <li class="nav-item disable">
+                                <a class="nav-link">Help Us</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">FAQ</a>
+                            <li class="nav-item disable">
+                                <a class="nav-link">FAQ</a>
                             </li>
                         </ul>
                     </div>    
