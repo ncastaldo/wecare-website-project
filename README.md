@@ -9,7 +9,7 @@
 - Team member n.2   :   ROBERT, AMAHIRWE,   10453754,   polimi-hyp-2018-10453754
 
 ## Database structure //TODO
-![alt text](file:///Users/Nicola/hypermedia/polimi-hyp-2018-project/other/db.png)
+![alt text](/other/db.png)
 
 ## Description of the REST API
 

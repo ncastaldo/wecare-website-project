@@ -14,13 +14,13 @@ let knex = require("knex");
 /***** JSON UPLOADER *****/
 /*************************/
 
-let peopleJson = require("./public/assets/json/people.json");
-let peopleServicesJson = require("./public/assets/json/people_services.json");
-let locationsJson = require("./public/assets/json/locations.json");
-let servicesJson = require("./public/assets/json/services.json");
-let locationsServicesJson = require("./public/assets/json/locations_services.json");
-let whoWeAreJson = require("./public/assets/json/whoweare.json");
-let photogalleryJson = require("./public/assets/json/photogallery.json");
+let peopleJson = require("./other/json/people.json");
+let peopleServicesJson = require("./other/json/people_services.json");
+let locationsJson = require("./other/json/locations.json");
+let servicesJson = require("./other/json/services.json");
+let locationsServicesJson = require("./other/json/locations_services.json");
+let whoWeAreJson = require("./other/json/whoWeAre.json");
+let photogalleryJson = require("./other/json/photogallery.json");
 
 
 
@@ -32,19 +32,15 @@ let sqlDb;
 function initDatabaseConnection(){
 
     /* locally
-        
-        TEST=true node index
-        
+        TEST=true node index 
     */
-    
-    
-    
+
     if (process.env.TEST){
         sqlDb = knex({
             client: "sqlite3",
             debug: true,
             connection: {
-                filename: "./wecare.sqlite"
+                filename: "./other/wecare.sqlite"
             }
         });
     }else{
@@ -66,12 +62,34 @@ function initDatabaseConnection(){
 
 function ensurePopulated(){
     //this returns a "promise", I can use "then" with a callback
-    return ensurePeople() 
-        && ensurePeopleServices()
-        && ensureLocations() 
-        && ensureServices() 
-        && ensureLocationsServices() 
-        && ensurePhotogallery();
+    return ensureWhoWeAre()
+    && ensurePeople() 
+    && ensurePeopleServices()
+    && ensureLocations() 
+    && ensureServices() 
+    && ensureLocationsServices() 
+    && ensurePhotogallery()
+    && ensureRequests();
+}
+
+function ensureWhoWeAre(){
+    return sqlDb.schema.hasTable("whoWeAre").then(function (exists){
+        if(!exists){
+            return sqlDb.schema.createTable("whoWeAre", function (table){
+                table.integer("id").unsigned();
+                table.string("title");
+                table.text("description");
+                table.string("image");
+            }).then( function() {
+                let insertion = _.map(whoWeAreJson, function(el) {
+                    return sqlDb("whoWeAre").insert(el);
+                })
+                return Promise.all(insertion); //to return when all promises are fulfilled
+            })
+        } else {
+            return true;
+        };
+    });
 }
 
 function ensurePeople(){
@@ -207,6 +225,23 @@ function ensurePhotogallery(){
     });
 }
 
+//no need to fill it, just create it to save new requests on the ContactUs page
+function ensureRequests(){
+    return sqlDb.schema.hasTable("requests").then(function (exists){
+        if(!exists)
+            return sqlDb.schema.createTable("requests", function (table){
+                table.increments("id");
+                table.timestamp("date").defaultTo(sqlDb.fn.now());
+                table.string("fullname");
+                table.string("email");
+                table.string("telephone");
+                table.enu("who",["parent","donator","futureCollaborator","other"]);
+                table.text("details");
+            })
+        return true;                        
+    });
+}
+
 
 
 /***************************/
@@ -229,19 +264,29 @@ app.set("port", myPort);
 /*******************************/
 
 
+// WHO-WE-ARE
+
+app.get("/rest/whoWeAre", function(req, res){
+    let myQuery = sqlDb("whoWeAre")
+    .select("id","title", "description", "image")
+    .orderBy("id")
+    .then( (el) => {
+        res.send(
+            JSON.stringify(el));
+    });
+});
+
+
 // PEOPLE
 
 app.get("/rest/people", function(req, res){
-    let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
-    let limit = parseInt(_.get(req, "query.limit", 5));
     let myQuery = sqlDb("people")
-        .offset(start)
-        .limit(limit)
-        .orderBy("lastname", "firstname")
-        .then( (person) => {
-            res.send(
-                JSON.stringify(person));
-        });
+    .select("id", "firstname", "lastname", "image", "profession")
+    .orderBy("firstname")
+    .then( (person) => {
+        res.send(
+            JSON.stringify(person));
+    });
 });
 
 app.get("/rest/people/:id", function(req,res) {
@@ -257,29 +302,26 @@ app.get("/rest/people/:id", function(req,res) {
 app.get("/rest/people/:id/services", function(req,res) {
     let personId = req.params.id;
     let myQuery = sqlDb
-        .select("services.id","services.name","services.image")
-        .from("services")
-        .leftJoin("people_services", "services.id", "people_services.serviceId")
-        .where("people_services.personId", personId)
-        .orderBy("services.name")
-        .then( (service) => {
-            res.send(JSON.stringify(service));
-        });
+    .select("services.id","services.name","services.image")
+    .from("services")
+    .leftJoin("people_services", "services.id", "people_services.serviceId")
+    .where("people_services.personId", personId)
+    .orderBy("services.name")
+    .then( (service) => {
+        res.send(JSON.stringify(service));
+    });
 });
 
 
 // LOCATIONS
 
 app.get("/rest/locations", function(req, res){
-    let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
-    let limit = parseInt(_.get(req, "query.limit", 5));
     let myQuery = sqlDb("locations")
-        .offset(start)
-        .limit(limit)
-        .orderBy("name")
-        .then( (location) => {
-            res.send(JSON.stringify(location));
-        });
+    .select("id", "name", "image")
+    .orderBy("name")
+    .then( (location) => {
+        res.send(JSON.stringify(location));
+    });
 });
 
 app.get("/rest/locations/:id", function(req, res){
@@ -295,89 +337,110 @@ app.get("/rest/locations/:id", function(req, res){
 app.get("/rest/locations/:id/photogallery", function(req, res){
     let locationId = req.params.id;
     let myQuery = sqlDb.select("image")
-        .from("photogallery")
-        .where("id", locationId)
-        .andWhere("type", "location")
-        .then( (image) => {
-            res.send(JSON.stringify(image));
-        });
+    .from("photogallery")
+    .where("id", locationId)
+    .andWhere("type", "location")
+    .then( (image) => {
+        res.send(JSON.stringify(image));
+    });
 });
 
 app.get("/rest/locations/:id/services", function(req, res){
     let locationId = req.params.id;
     let myQuery = sqlDb
-        .select("services.id","services.name","services.image", "services.description1")
-        .from("services")
-        .leftJoin("locations_services", "services.id", "locations_services.serviceId")
-        .where("locations_services.locationId", locationId)
-        .orderBy("services.name")
-        .then( (service) => {
-            res.send(JSON.stringify(service));
-        });
+    .select("services.id","services.name","services.image", "services.description1")
+    .from("services")
+    .leftJoin("locations_services", "services.id", "locations_services.serviceId")
+    .where("locations_services.locationId", locationId)
+    .orderBy("services.name")
+    .then( (service) => {
+        res.send(JSON.stringify(service));
+    });
 });
 
-        
+
 // SERVICES
 
 app.get("/rest/services", function(req, res){
-    let start = parseInt(_.get(req, "query.start", 0)); //if the start (query param) is not defined -> 0 is default
-    let limit = parseInt(_.get(req, "query.limit", 5));
     let myQuery = sqlDb("services")
-        .offset(start)
-        .limit(limit)
-        .orderBy("name")
-        .then( (service) => {
-            res.send(JSON.stringify(service));
-        });
+    .select("id", "image", "name", "description1")
+    .orderBy("name")
+    .then( (service) => {
+        res.send(JSON.stringify(service));
+    });
 });
 
 
 app.get("/rest/services/:id", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb("services")
-        .where("id", serviceId)
-        .first()
-        .then( (service) => {
-            res.send(JSON.stringify(service));
-        });
+    .where("id", serviceId)
+    .first()
+    .then( (service) => {
+        res.send(JSON.stringify(service));
+    });
 });
 
 app.get("/rest/services/:id/photogallery", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb.select("image")
-        .from("photogallery")
-        .where("id", serviceId)
-        .andWhere("type", "service")
-        .then( (image) => {
-            res.send(JSON.stringify(image));
-        });
+    .from("photogallery")
+    .where("id", serviceId)
+    .andWhere("type", "service")
+    .then( (image) => {
+        res.send(JSON.stringify(image));
+    });
 });
 
 app.get("/rest/services/:id/locations", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb
-        .select("locations.id","locations.name","locations.image", "locations.city")
-        .from("locations")
-        .leftJoin("locations_services", "locations.id", "locations_services.locationId")
-        .where("locations_services.serviceId", serviceId)
-        .orderBy("locations.name")
-        .then( (location) => {
-            res.send(JSON.stringify(location));
-        });
+    .select("locations.id","locations.name","locations.image")
+    .from("locations")
+    .leftJoin("locations_services", "locations.id", "locations_services.locationId")
+    .where("locations_services.serviceId", serviceId)
+    .orderBy("locations.name")
+    .then( (location) => {
+        res.send(JSON.stringify(location));
+    });
 });
 
 app.get("/rest/services/:id/people", function(req, res){
     let serviceId = req.params.id;
     let myQuery = sqlDb
-        .select("people.id","people.firstname","people.lastname","people.image", "people.profession")
-        .from("people")
-        .leftJoin("people_services", "people.id", "people_services.personId")
-        .where("people_services.serviceId", serviceId)
-        .orderBy("people.lastname","people.firstname")
-        .then( (people) => {
-            res.send(JSON.stringify(people));
-        });
-    
+    .select("people.id","people.firstname","people.lastname","people.image", "people.profession")
+    .from("people")
+    .leftJoin("people_services", "people.id", "people_services.personId")
+    .where("people_services.serviceId", serviceId)
+    .orderBy("people.firstname")
+    .then( (people) => {
+        res.send(JSON.stringify(people));
+    });
+
+});
+
+
+// CONTACT US
+
+app.get("/rest/requests", function(req, res){
+    let myQuery = sqlDb
+    .from("requests")
+    .then( (contactReq) => {
+        res.send(JSON.stringify(contactReq));
+    });
+});
+
+
+app.post("/rest/requests", function(req, res){
+    let json = req.body;
+    console.log("The json that will be inserted: " +json);
+    sqlDb("requests")
+        .insert({fullname:json.fullname, 
+                 email:json.email, 
+                 telephone:json.telephone, 
+                 who:json.who,
+                 details:json.details})
+        .then( res.sendStatus(200) );
 });
 
 
@@ -393,52 +456,4 @@ ensurePopulated().then(function(){
     });
 });
 
-
-
-
-
-/* COMMENTS */
-
-
-/*
-app.get("/rest/people/:id", function(req,res) {
-
-    let found = false;
-
-    console.log(" --------- "+personId+" ---------- ");
-
-    let person = _.find(peopleData.people, function(o){
-        return o.id === personId;
-    });
-    if(_.isUndefined(person)){
-        res.status(400);
-        res.send({message : "Person not found!"});
-    }else{
-        res.status(200);
-        res.send(JSON.stringify(person));
-    }
-
-    for(let i = 0; i<peopleData.people.length && !found; i++){
-        if(peopleData.people[i].id === personId){
-            res.send(JSON.stringify(peopleData.people[i]));
-            found = true;
-        }
-    }
-    if(!found){
-        res.status(400);
-        res.send({message : "Person not found!"});
-    }
-
-*/
-
-
-//knex js for database switch (remote - local)
-
-/* OLD VERSION
-app.get("/people", function(req, res){
-    let myQuery = sqlDb("people").then( (person) => {
-        res.send(JSON.stringify(person));
-    })
-});
-*/
 
