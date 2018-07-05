@@ -52,7 +52,7 @@
 
         "id" : 4,
         "city" : "København",
-        "name" : "København Children Multisevice Center",
+        "name" : "København Children Center",
         "image" : "/assets/img/locations/l004/001.jpg",
         "description" : "<p>København Children Multisevice Center offers Music Therapy and Physiotherapy services to childre  and young adults. The center was built in March 2018 and is located at 15 km off the city of Copenhagen. </p> <p> The Center is open from Monday to Friday from 0900 to 1700.",
         "practicalInfo" : "<p>The center recieves and help children in need of these services. For more information on how to access the services, please contact us.<p>",
@@ -67,7 +67,7 @@
 
         "id" : 5,
         "city" : "Bolzano",
-        "name" : "Bolzano Speech and Language Center",
+        "name" : "Bolzano Language Center",
         "image" : "/assets/img/locations/l005/001.jpg",
         "description" : "<p>Bolzano Speech and Language Center offers Speech and Language Services to children up to the age of 14 years old. </p><p> The Center is open from Monday to Friday from 0830 to 1630.",
         "practicalInfo" : "<p>In order to access the services here, please book an appointment through the contacts below.<p>",

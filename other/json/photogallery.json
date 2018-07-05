@@ -161,14 +161,63 @@
     },
     {
         "type" : "location",
-        "id" : 1,
-        "image" : "/assets/img/locations/l001/004.jpg"
+        "id" : 2,
+        "image" : "/assets/img/locations/l002/001.jpg"
     },
     {
         "type" : "location",
-        "id" : 1,
-        "image" : "/assets/img/locations/l001/005.jpg"
+        "id" : 2,
+        "image" : "/assets/img/locations/l002/002.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 2,
+        "image" : "/assets/img/locations/l002/003.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 3,
+        "image" : "/assets/img/locations/l003/001.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 3,
+        "image" : "/assets/img/locations/l003/002.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 3,
+        "image" : "/assets/img/locations/l003/003.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 4,
+        "image" : "/assets/img/locations/l004/001.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 4,
+        "image" : "/assets/img/locations/l004/002.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 4,
+        "image" : "/assets/img/locations/l004/003.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 5,
+        "image" : "/assets/img/locations/l005/001.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 5,
+        "image" : "/assets/img/locations/l005/002.jpg"
+    },
+    {
+        "type" : "location",
+        "id" : 5,
+        "image" : "/assets/img/locations/l005/003.jpg"
     }
-    
     
 ]

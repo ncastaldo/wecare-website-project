@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "title" : "Mission",
+        "description": "For We Care, ensuring children and young adult’s wellbeing means creating opportunities for a decent, full and satisfactory life: in other words, offering them a proper therapy, personal and medical care, as well as the chance of freely nurturing their most intimate aspirations.",
+        "image": "/assets/img/whoWeAre/001.jpg"
+    },
+    {
+        "id" : 2,
+        "title" : "History",
+        "description" : "We Care Association was founded in England in February 2018 as a Voluntary Association, followed a few months later, in April 2018, by the Social Cooperative up to the Foundation in May 2018. Its eligibility as a Non-Governmental Organization (NGO) was issued by the Ministry for Foreign Affairs in April 2018: since then, the servicies activities have been developed in major cities accross Europe according to the principles and approaches of international cooperation.",
+        "image": "/assets/img/whoWeAre/002.jpg"
+    },
+    {
+        "id" : 3,
+        "title" : "Association",
+        "description": "We Care is a humanitarian association that operates through its locations that are found in major cities in Europe. Its charter members aimed at creating an organisation able to implement effective actions to help and protect children and young adults with disabilities and safeguard as well as promote their rights to grow up in a safe and suitable environment.",
+        "image": "/assets/img/whoWeAre/003.jpg"
+    },
+    {
+        "id" : 4,
+        "title" : "Networks",
+        "description": "We Care, through the participation in conferences, initiatives, campaigns, working thematic groups and becoming a member of several italian, european and world networks, has strengthened its presence in terms of networking.",
+        "image": "/assets/img/whoWeAre/004.jpg"
+    }
+]
