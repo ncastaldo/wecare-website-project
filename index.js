@@ -22,6 +22,8 @@ let locationsServicesJson = require("./other/json/locations_services.json");
 let whoWeAreJson = require("./other/json/whoWeAre.json");
 let photogalleryJson = require("./other/json/photogallery.json");
 
+let contactUsJson = require("./other/json/contactUs.json");
+
 
 
 /*************************/
@@ -421,6 +423,11 @@ app.get("/rest/services/:id/people", function(req, res){
 
 
 // CONTACT US
+
+//this is the only REST endpoint that does not rely on the db, but directly on a json file
+app.get("/rest/contactUs",function(req, res){
+    res.send(contactUsJson);
+});
 
 app.get("/rest/requests", function(req, res){
     let myQuery = sqlDb

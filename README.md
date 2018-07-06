@@ -118,6 +118,11 @@ The pages dynamically load the content they show by performing **AJAX** calls to
 - Example: [/rest/services/1/people](https://polimi-hyp-2018-team-10472465.herokuapp.com/rest/services/1/people)
 - Usage: [PEOPLE BY SERVICE](https://polimi-hyp-2018-team-10472465.herokuapp.com/pages/people.html#serviceId=1)
 
+###### - [/rest/contactUs](https://polimi-hyp-2018-team-10472465.herokuapp.com/rest/contactUs)
+- Returns: the data for the Contact Us page
+- Usage: [CONTACT US](https://polimi-hyp-2018-team-10472465.herokuapp.com/pages/contactUs.html)
+- Info: this REST endpoint only returns a static JSON file, without communicating with the database
+
 #### Optional
 
 ###### - [/rest/requests](https://polimi-hyp-2018-team-10472465.herokuapp.com/rest/requests)
@@ -126,7 +131,7 @@ The pages dynamically load the content they show by performing **AJAX** calls to
 
 ###### - /rest/requests - POST
 - Accepts: a JSON file containing the information filled in the form of the Contact Us page
-- Usage: [CONTACT-US](https://polimi-hyp-2018-team-10472465.herokuapp.com/pages/contactUs.html)
+- Usage: [CONTACT US](https://polimi-hyp-2018-team-10472465.herokuapp.com/pages/contactUs.html)
 
 
 
