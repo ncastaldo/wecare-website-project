@@ -1,17 +1,43 @@
 # README
 
-## Web application
-- Heroku URL:  https://polimi-hyp-2018-team-10472465.herokuapp.com
-- Bitbucket repo URL:  https://bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project/src/master/
+## General info on team and web application
 
-## Team
+- **Heroku** URL:  https://polimi-hyp-2018-team-10472465.herokuapp.com
+- **Bitbucket** repo URL:  https://bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project/src/master/
 - Team administrator:   NICOLA, CASTALDO,   10472465,   polimi-hyp-2018-10472465
 - Team member n.2   :   ROBERT, AMAHIRWE,   10453754,   polimi-hyp-2018-10453754
 
-## Database structure //TODO
+We worked mainly together, since we did not have any experience with HTML, CSS, JS and we wanted to learn as much as possible. 
+
+
+## Front-end
+
+The client-side languages we used are:
+
+- HTML5
+- CSS
+- JavaScript
+
+We took advantage of some external tools:
+
+- CSS - [Bootstrap](https://getbootstrap.com/)
+- CSS - [Animate](https://daneden.github.io/animate.css/)
+- CSS - [Font Awesome](https://fontawesome.com/)
+- JS - [JQuery](https://jquery.com/)
+- JS - [Bootstrap](https://getbootstrap.com/)
+
+## Back-end
+
+### Server
+In the [index.js](index.js) file there is the **database** initialization, the creation of the **REST endpoints** and the **server** starting procedure. The data files are statically saved in JSON format in the [other/json/](other/json/) folder and, at the start of the server, they are loaded into the database in case the relative tables are not present. Then the server creates the REST endpoints in order to retrieve the data by directly querying the database.
+
+### Pages
+The pages dynamically load the content they show by performing **AJAX** calls to the REST endpoints. In fact, for each of these pages (at folder [public/pages/](public/pages/)) there is the corresponding JS file (at folder [public/assets/js/](public/assets/js/))
+
+### Database structure
 ![alt text](/other/db.png)
 
-## Description of the REST API
+### Description of the REST API
 
 ###### - [/rest/whoWeAre](https://polimi-hyp-2018-team-10472465.herokuapp.com/rest/whoWeAre)
 - Returns: who we are 
@@ -96,7 +122,7 @@
 
 ###### - [/rest/requests](https://polimi-hyp-2018-team-10472465.herokuapp.com/rest/requests)
 - Returns: all the requests sent with the contact-us form
-- Attention! This REST endpoint is only for **TESTING** purpose and for the professor to verify its functionality. This endpoint should not be visible from the outside, because it may contain sensitive informations
+- Attention! This REST endpoint is only for **TESTING** purpose and for the professor to verify its functionality.
 
 ###### - /rest/requests - POST
 - Accepts: a JSON file containing the information filled in the form of the Contact Us page
