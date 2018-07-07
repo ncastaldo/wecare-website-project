@@ -7,99 +7,32 @@
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
 
         <!-- BOOTSTRAP minified CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-
         <!-- Animate CSS -->
         <link rel="stylesheet" href="../assets/css/animate.min.css">
-
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main.css">
-
+        
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
-
-        <script type= "text/javascript" src="../assets/js/script.js"></script>
 
     </head>
 
     <body>
 
         <!-- HEADER -->
-        <div class="top-content">
-
-            <div class="container">
-
-                <div class="row upper-top-content">
-
-                    <a class="logo-home col-sm-8" href="home.html">
-                        <img src="../assets/img/logo/logo-3.svg">
-                    </a>
-
-                    <a class="btn btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
-
-                </div>
-
-            </div>
-
-            <hr/>
-
-            <div class="container">
-
-                <nav class="navbar navbar-custom navbar-expand-md">   
-
-                    <!-- To have the "3 lines"/"hamburger" button when there are small sizes-->
-                    <button class="navbar-toggler ml-auto custom-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse mr-auto" id="navbarMenu">
-
-                        <ul class="navbar-nav ml-auto">
-
-                            <li class="nav-item">
-                                <a href="home.html" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="whoWeAre.html" class="nav-link">Who we are</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="services.html" class="nav-link">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="locations.html" class="nav-link">Locations</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a href="people.html" class="nav-link">People</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Events</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contactUs.html" class="nav-link">Contact Us</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </nav>
-
-            </div>
-
-        </div>
+        <div id="header"></div>
+        <script>
+            $("#header").load("header.html");
+            $(document).ready(function(){$("#people-item").addClass("active")})
+        </script>
         <!-- /HEADER -->
 
         <!-- MAIN -->
@@ -109,9 +42,8 @@
 
                 <div class="container">
                     <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
-                        <span class="top-background-title PEOPLE-NAME">
-                        </span>
-                    </h2> <!-- DYNAMIC HERE -->
+                        <span class="top-background-title PEOPLE-NAME"><!-- DYNAMIC HERE --></span>
+                    </h2>
                 </div>
 
             </div>
@@ -120,7 +52,7 @@
                 <div class="container">
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-                        <li class="breadcrumb-item active PEOPLE-NAME"></li>
+                        <li class="breadcrumb-item active PEOPLE-NAME"><!-- DYNAMIC HERE --></li>
                     </ol>
                 </div>
             </nav>
@@ -136,7 +68,7 @@
 
                     <div class="row PEOPLE-SERVICES">
 
-                        <!-- AJAX CALL HERE -->
+                        <!-- DYNAMIC HERE -->
 
                     </div>
 
@@ -146,36 +78,12 @@
 
             <div class="container mt-2">
 
-                
-                <!-- Intro row TODO DYNAMIC-->
-                <h2 class="mb-3"><span class="h-title PEOPLE-NAME"></span></h2> 
+                <h2 class="mb-3"><span class="h-title PEOPLE-NAME"><!-- DYNAMIC HERE --></span></h2> 
 
                 <!-- People row -->
                 <div class="row PEOPLE mt-2">
 
-
-                    <!--div class="people-card-container col-lg-4 col-md-6 col-sm-6 col-12 mb-4 text-center animated fadeIn">
-                        <a class="card" href="#">
-                            <div class="card-img-container">
-                                <img class="card-img-top" src="/assets/img/people/p001.jpg">
-                            </div>
-                            <div class="card-description-container">
-                                <h5 class="card-description">Meredith Gray</h5>
-                            </div>
-                            <div class="card-title-container">
-                                <h3 class="card-title">Music Therapist</h3>
-                            </div>
-                        </a>
-                    </div-->
-
-
-                    <!--div class="col-lg-3 col-md-4 col-sm-6 col-12 text-center mb-4 animated fadeIn">
-<a href="person.html?id='+person.id+'">
-<img class="rounded-circle img-fluid d-block p-4" src="'+person.image+'" alt=""><h4>'+person.firstname+' '+person.lastname+'<br>
-<small class="link-description">'+person.profession+'</small>
-</a></div-->
-
-                    <!-- AJAX CALL HERE -->
+                    <!-- DYNAMIC HERE -->
 
                 </div>
 
@@ -187,49 +95,10 @@
         <!-- /MAIN -->
 
         <!-- FOOTER -->
-        <footer class="footer footer-custom">
-
-            <div class="container">
-
-                <nav class="navbar navbar-footer-custom navbar-expand">
-
-                    <div class="navbar-nav mr-auto">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-facebook"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-twitter"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-instagram"></a>
-                            </li>
-                        </ul>
-
-                    </div>   
-
-                    <div class="navbar-nav ml-auto">
-
-                        <ul class="navbar-nav">
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Help Us</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">FAQ</a>
-                            </li>
-                        </ul>
-                    </div>    
-
-                </nav>
-
-            </div>
-
-        </footer>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("footer.html");
+        </script>
         <!-- /FOOTER -->
 
     </body>
