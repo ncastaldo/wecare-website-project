@@ -5,7 +5,6 @@ $(document).ready(function(){
 
     sidebar = $(".sidebar");
 
-
     sticky = sidebar.offset().top - 17;
 
     window.onscroll = function() {
@@ -16,6 +15,16 @@ $(document).ready(function(){
     window.onresize = function() {
         stickIt();
     };
+    
+    return $.ajax({
+        method: "GET",
+        dataType: "json",
+        url: "/rest/whoWeAre", //SERVER URL
+        error: function (request, error) {
+            console.log(request, error);
+        },
+        success: function(data){loadJsonWhoWeAreIntoHtml(data);}
+    });
 
 });
 
@@ -31,8 +40,6 @@ function stickIt() {
     sidebar.width(w);
 }
 
-
-
 function activateNavItem(event){
 
     let scrollPos = $(document).scrollTop();
@@ -45,4 +52,26 @@ function activateNavItem(event){
             currLink.addClass("active");
         }
     });
+}
+
+function loadJsonWhoWeAreIntoHtml(whoWeAre){
+    
+    console.log(whoWeAre);
+    
+    let el = "";
+    let sidebarEl = "";
+    
+    for (let i = 0; i < whoWeAre.length; i++) {
+        
+        let wwa = whoWeAre[i];
+        
+        el += '<div class="pb-2 mb-4" id="wwa-' + wwa.id + '"><h3><span class="h-title">' + wwa.title + '</span></h3><p>' + wwa.description + '</p><img src="' + wwa.image + '" class="image-wwa animated fadeIn"></div>'
+        
+        sidebarEl += '<li class="nav-item"><a class="nav-link'+ ( (i==0)? (' active') : (' ') ) +'" href="#wwa-' + wwa.id + '">' + wwa.title + '</a></li>'
+        
+    }
+    
+    $(".WWA").append(el);
+    $(".SIDEBAR-WWA").append(sidebarEl);
+     
 }
