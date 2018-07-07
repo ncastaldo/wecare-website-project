@@ -12,6 +12,7 @@ $(document).ready(function(){
         activateNavItem();
     };
 
+    
     $(sidebar).attrchange({
         trackValues: true, // set to true so that the event object is updated with old & new values
         callback: function(e) {
