@@ -1,24 +1,3 @@
-function getURL() {
-    var query_string = {};
-    var query = window.location.hash.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        // If first entry with this name
-        if (typeof query_string[pair[0]] === "undefined") {
-            query_string[pair[0]] = decodeURIComponent(pair[1]);
-            // If second entry with this name
-        } else if (typeof query_string[pair[0]] === "string") {
-            var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-            query_string[pair[0]] = arr;
-            // If third or later entry with this name
-        } else {
-            query_string[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-    }
-    return query_string;
-};
-
 let URL = getURL();
 let locationId = URL.locationId;
 let jsonLocations;
@@ -54,7 +33,10 @@ function performServicesAjaxCalls(){
         error: function (request, error) {
             console.log(request, error);
         },
-        success: function(data){ loadJsonServicesIntoHtml(data);}
+        success: function(data){ 
+            loadJsonServicesIntoHtml(data);
+            addServicesHoverHandler();
+        }
     });
 
 }
@@ -70,7 +52,6 @@ function loadJsonServicesIntoHtml(services){
         el += getServiceHtml(service,i );
     }
 
-
     //This trick is used in order NOT to have problems/glitches with the loading of dynamic content :)
     $(".SERVICES").css("minHeight", $(".SERVICES").height());
     $(".SERVICES").empty();
@@ -78,8 +59,6 @@ function loadJsonServicesIntoHtml(services){
     $(".SERVICES").append(el);
 
     $(".SERVICES").css("minHeight", 0);
-
-    addServicesHoverHandler();
 
 }
 
@@ -92,18 +71,24 @@ function getServiceHtml(service, i ){
 
 function addServicesHoverHandler(){
     
-    $("div.card-description-container").hide();
+    let div = $("div.card-description-container");
+    div.css("animation-duration","0.5s");
+    div.hide();
 
     $(".card").hover(
+        
         function(){
             let el = $(this).find("div.card-description-container");
-            if(! el.is(":visible"))
-                el.slideDown(300);
+            el.show();
+            el.addClass("fadeIn");
+            //el.slideUp(300);
         },
         function(){
             let el = $(this).find("div.card-description-container");
-            el.slideUp(300);
-    });
+            el.removeClass("fadeIn");
+            el.hide();
+        }
+    );
 
 }
 
@@ -184,3 +169,27 @@ $(document).on('click', '.SERVICE-LOCATION-EL', function(ev){
 
 
 });
+
+// ---
+//HELPER function to handle the URL query
+// ---
+function getURL() {
+    var query_string = {};
+    var query = window.location.hash.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        // If first entry with this name
+        if (typeof query_string[pair[0]] === "undefined") {
+            query_string[pair[0]] = decodeURIComponent(pair[1]);
+            // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+            var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+            query_string[pair[0]] = arr;
+            // If third or later entry with this name
+        } else {
+            query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        }
+    }
+    return query_string;
+};
