@@ -28,6 +28,7 @@ External tools:
 - CSS - [Font Awesome](https://fontawesome.com/)
 - JS - [JQuery](https://jquery.com/)
 - JS - [Bootstrap](https://getbootstrap.com/)
+- JS - [MeetSelva.attrchange](https://github.com/meetselva/attrchange/blob/master/js/attrchange.js)
 
 ## Back-end
 
