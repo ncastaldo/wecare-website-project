@@ -1,25 +1,6 @@
-
-/* Smaller than standard 960 (devices and browsers) LG + MD + SM + (XS) */
-@media only screen and (max-width: 959px) {}
-
-/* Tablet Portrait size to standard 960 (devices and browsers)  MD */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
-
-/* All Mobile Sizes (devices and browser) SM + (XS) */
-@media only screen and (max-width: 767px) {}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) SM */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) (XS) */
-@media only screen and (max-width: 479px) {}
-
-/*gray e9ecef */
-
-
-/* http://css-workshop.com/hover-box-text-over-images-on-hover-and-more/ */
-
-/* ----- ALL DOCUMENT ----- */
+/* ------------------ */
+/* ---- ALL DOC ----- */
+/* ------------------ */
 
 * {
     /*font-family: 'Tajawal', sans-serif;*/
@@ -35,7 +16,6 @@ main {
     margin-top: 10px; /* between header and main */
     margin-bottom: 10px; /* between main and footer */
 }
-
 
 
 /* a */
@@ -63,6 +43,7 @@ a:hover{
 }
 
 
+/* buttons */
 
 .btn{
     background-color: #009490;
@@ -74,6 +55,7 @@ a:hover{
     background-color: #e85c00;
 }
 
+/* important titles */
 
 .h-title{
     font-weight: 100;
@@ -89,7 +71,7 @@ a:hover{
 
 
 
-/* ----- ARROW ----- */
+/* arrow-gif */
 
 .arrow-down {
     width: 25px;
@@ -136,7 +118,9 @@ a:hover .arrow-down:after{
 }
 
 
-/* ----- TOP CONTENT ----- */
+/* ------------------ */
+/* -- TOP CONTENT --- */
+/* ------------------ */
 
 .top-content{
     box-shadow: 0 8px 6px -6px #999;
@@ -166,7 +150,6 @@ a:hover .arrow-down:after{
     background-color: #009490;
     color: #ffffff !important;
 }
-
 
 /* Navbar */
 
@@ -211,9 +194,6 @@ a:hover .arrow-down:after{
     box-shadow: inset 0 0;
 }
 
-
-
-
 /* Navbar toggler */
 
 .custom-toggler{
@@ -238,7 +218,94 @@ button[aria-expanded="false"].custom-toggler{
 }
 
 
-/* ----- BREADCRUMB ----- */
+/* ------------------ */
+/* --- BACKGROUND --- */
+/* ------------------ */
+
+.top-background {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    height: 170px;
+}
+
+@media only screen and (min-width: 767px) {
+    .top-background {
+        height:  220px !important;
+        padding-bottom: 50px;
+    }
+}
+
+#locations-bg{
+    background: url(../img/locations/locations-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#location-bg{
+    background: url(../img/locations/location-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#services-bg{
+    background: url(../img/services/services-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#service-bg{
+    background: url(../img/services/service-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#people-bg{
+    background: url(../img/people/people-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#person-bg{
+    background: url(../img/people/person-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#whoWeAre-bg{
+    background: url(../img/whoWeAre/whoWeAre-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#contactUs-bg{
+    background: url(../img/contactUs/contactUs-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.top-background-title{
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 1.35;
+    color: #009490;
+    background-color: #ffffffd9;
+    padding: 3px 0px 3px 0px;
+}
+
+
+/* ------------------ */
+/* --- BREADCRUMB --- */
+/* ------------------ */
 
 .breadcrumb-navbar{
     background-color: #e9ecef;
@@ -256,9 +323,9 @@ button[aria-expanded="false"].custom-toggler{
 }
 
 
-
-
-/* ----- HOME ----- */
+/* ------------------ */
+/* ------ HOME ------ */
+/* ------------------ */
 
 /* Carousel */
 
@@ -306,19 +373,61 @@ button[aria-expanded="false"].custom-toggler{
 }
 
 
-/* Needed to show files under navbar correctlym - only if fixed navbar /*
+/* ------------------ */
+/* --- CONTACT-US --- */
+/* ------------------ */
 
-/*#home{
-padding-top: 65px;
-}*/
+.contact-us-title{
+    margin-bottom: 20px;
+}
+
+.static-contacts-col{
+    width: 100%; 
+    max-width: 500px;
+    margin: auto;
+}
+
+.static-contacts hr {
+    border-color: #ffffff;
+}
+
+.static-contacts{
+    width: 100%; 
+    max-width: 300px;
+}
+
+.static-contacts .text{
+    font-weight: 100;
+    line-height: 1.0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+    color: #ffffff;
+}
+
+.static-contacts a:hover .text{
+    text-decoration: underline;
+}
+
+.static-contacts .fas{
+    color: #ffffff;
+}
+
+.form-col{
+    width: 100%; 
+    max-width: 400px;
+    margin: auto;
+}
+
+#submit-button{
+    height:50px; 
+    width:140px; 
+}
 
 
-
-
-
-
-
-/* ----- WHO-WE-ARE ----- */
+/* ------------------ */
+/* --- WHO-WE-ARE --- */
+/* ------------------ */
 
 .sticky {
     position: fixed;
@@ -331,16 +440,18 @@ padding-top: 65px;
 }
 
 
-
-
-/* ----- SERVICES ----- */
+/* ------------------ */
+/* ---- SERVICES ---- */
+/* ------------------ */
 
 .order-by-div{
     background-color: #e9ecef;
 }
 
 
-/* ----- SERVICE + LOCATION ----- */
+/* ------------------ */
+/* SERVICE + LOCATION */
+/* ------------------ */
 
 .sidebar .nav-item{
     margin-top: 0px;
@@ -357,10 +468,6 @@ padding-top: 65px;
     color: #009490 !important;
     background-color: #e9ecef !important;
     margin-top: 2px;
-}
-
-.sidebar .nav-link.external{
-    /*background-color: #3284ff;*/
 }
 
 .sidebar .nav-link.active {
@@ -380,8 +487,9 @@ padding-top: 65px;
 }
 
 
-
-/* all cards */
+/* ------------------ */
+/* ------ CARDS ----- */
+/* ------------------ */
 
 .card-container,
 .simple-card-container,
@@ -476,7 +584,6 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-
 /* little cards */
 
 .little-card-container{
@@ -531,82 +638,9 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-/* background */
-
-.top-background {
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 20px;
-    height: 170px;
-}
-
-@media only screen and (min-width: 767px) {
-    .top-background {
-        height:  220px !important;
-        padding-bottom: 50px;
-    }
-}
-
-#locations-bg{
-    background: url(../img/locations/locations-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#location-bg{
-    background: url(../img/locations/location-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#services-bg{
-    background: url(../img/services/services-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-
-#service-bg{
-    background: url(../img/services/service-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#people-bg{
-    background: url(../img/people/people-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#person-bg{
-    background: url(../img/people/person-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#whoWeAre-bg{
-    background: url(../img/whoWeAre/whoWeAre-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.top-background-title{
-    text-transform: uppercase;
-    font-weight: 100;
-    line-height: 1.35;
-    color: #009490;
-    background-color: #ffffffd9;
-    padding: 3px 0px 3px 0px;
-}
-
-
-/* people */
+/* ------------------ */
+/* ----- PEOPLE ----- */
+/* ------------------ */
 
 .people-card-container{
     height: 300px;
@@ -658,8 +692,6 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-
-
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 
     .people-card-container{
@@ -672,6 +704,7 @@ a:hover .card-img-container .card-img-top{
 
 }
 
+/* needed to mantain circularity */
 @media only screen and (min-width: 768px) {
 
     .people-card-container{
@@ -693,14 +726,9 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-
-
-
-
-
-
-
-/* person */
+/* ------------------ */
+/* ----- PERSON ----- */
+/* ------------------ */
 
 .image-person{
     max-width: 300px; 
@@ -737,15 +765,9 @@ a:hover .card-img-container .card-img-top{
 }
 
 
-
-
-
-
-
-
-
-
+/* ------------------ */
 /* ----- FOOTER ----- */
+/* ------------------ */
 
 .footer-custom {
     bottom: 0;
