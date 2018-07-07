@@ -7,99 +7,32 @@
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
 
         <!-- BOOTSTRAP minified CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-
         <!-- Animate CSS -->
         <link rel="stylesheet" href="../assets/css/animate.min.css">
-
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main.css">
-
+        
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
-
-        <script type= "text/javascript" src="../assets/js/script.js"></script>
 
     </head>
 
     <body>
 
         <!-- HEADER -->
-        <div class="top-content">
-
-            <div class="container">
-
-                <div class="row upper-top-content">
-
-                    <a class="logo-home col-sm-8" href="home.html">
-                        <img src="../assets/img/logo/logo-3.svg">
-                    </a>
-
-                    <a class="btn btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
-
-                </div>
-
-            </div>
-
-            <hr/>
-
-            <div class="container">
-
-                <nav class="navbar navbar-custom navbar-expand-md">   
-
-                    <!-- To have the "3 lines"/"hamburger" button when there are small sizes-->
-                    <button class="navbar-toggler ml-auto custom-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse mr-auto" id="navbarMenu">
-
-                        <ul class="navbar-nav ml-auto">
-
-                            <li class="nav-item">
-                                <a href="home.html" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="whoWeAre.html" class="nav-link">Who we are</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="services.html" class="nav-link">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="locations.html" class="nav-link">Locations</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a href="people.html" class="nav-link">People</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Events</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contactUs.html" class="nav-link">Contact Us</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </nav>
-
-            </div>
-
-        </div>
+        <div id="header"></div>
+        <script>
+            $("#header").load("header.html");
+            $(document).ready(function(){$("#people-item").addClass("active")})
+        </script>
         <!-- /HEADER -->
 
         <!-- MAIN -->
@@ -109,9 +42,8 @@
 
                 <div class="container">
                     <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
-                        <span class="top-background-title PERSON-FULLNAME">DYNAMIC<!-- DYNAMIC HERE -->
-                        </span>
-                    </h2> <!-- DYNAMIC HERE -->
+                        <span class="top-background-title PERSON-FULLNAME">DYNAMIC<!-- DYNAMIC HERE --></span>
+                    </h2>
                 </div>
 
             </div>
@@ -121,7 +53,7 @@
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item"><a href="home.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="people.html">All people</a></li>
-                        <li class="breadcrumb-item active PERSON-FULLNAME">DYNAMIC</li>
+                        <li class="breadcrumb-item active PERSON-FULLNAME"><!-- DYNAMIC HERE --></li>
                     </ol>
                 </div>
             </nav>
@@ -129,7 +61,6 @@
             <div class="container">
 
                 <div class="row d-flex justify-content-center flex-row">
-
 
                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
 
@@ -139,10 +70,9 @@
 
                         </div>
 
-
                         <div class="fa-person d-flex justify-content-center">
 
-                            <a href="mailTo:ciao@ciao.it" class="fa fa-envelope"></a>
+                            <a href="mailTo:example@example.it" class="fa fa-envelope"></a>
                             <a href="http://facebook.it" class="fa fa-facebook"></a>
                             <a href="http://twitter.it" class="fa fa-twitter"></a>
                             <a href="http://instagram.it" class="fa fa-instagram"></a>
@@ -157,34 +87,28 @@
                             <table class="table-person d-flex justify-content-center">
                                 <tr>
                                     <td class="entry-info"><span class="h-title"><i>Name</i></span></td>
-                                    <td class="PERSON-FIRSTNAME">DYN</td>
+                                    <td class="PERSON-FIRSTNAME"><!-- DYNAMIC HERE --></td>
                                 </tr>
                                 <tr>
                                     <td class="entry-info"><span class="h-title"><i>Surname</i></span></td>
-                                    <td class="PERSON-LASTNAME">DYN</td>
+                                    <td class="PERSON-LASTNAME"><!-- DYNAMIC HERE --></td>
                                 </tr>
                                 <tr id="last">
                                     <td class="entry-info"><span class="h-title"><i>Profession</i></span></td>
-                                    <td class="PERSON-PROFESSION">DYN</td>
+                                    <td class="PERSON-PROFESSION"><!-- DYNAMIC HERE --></td>
                                 </tr>
                             </table>
                         </div>
                         
-                        
-
-
                         <div class="pt-md-4">
 
-                        
                             <h3 class="mb-3"><span class="h-title"><i>Description</i></span></h3>
                         
-                            <div class="PERSON-DESCRIPTION"><p>Meredith performs music therapy services in a professional and compassionate manner utilizing music therapy techniques appropriate for the individual patient. </p> <p> Meredith also documents each session in the patient’s electronic medical chart (EPIC ). </p> <p> She  provides referrals for additional CCT therapies when appropriate & necessary.</p><p> Last but not least, Meredith participates as an integral member of an interdisciplinary health care team. </p>
-                            
+                            <div class="PERSON-DESCRIPTION">
+                                <!-- DYNAMIC HERE -->
                             </div>
                             
                         </div>
-
-
 
                     </div>
                     
@@ -193,92 +117,25 @@
                             <h3><span class="h-title"><i>Services:</i></span></h3>
                             
                             <div class="row PERSON-SERVICES">
-
-
-
-                                <!--div class="col-lg-3 col-md-6 col-sm-4 col-6 PERSON-SERVICES">
-
-                                    <div class="little-card-container text-center animated fadeIn">
-                                        <a class="card" href="#">
-                                            <img class="card-img-top" src="../assets/img/services/s001/001.jpg">  
-                                            <h6 class="card-title pt-2">Speech and Language Services</h6>
-                                        </a>
-                                    </div>
-
-                                </div-->
-
+                                <!-- DYNAMIC HERE -->
                             </div>
 
                         </div>
 
                     </div>
 
-
-                    
-
-
-
-
-
                 </div>
 
-
-
-
-
-
             <script src="../assets/js/person.js"></script>
-
-
-
 
         </main>
         <!-- /MAIN -->
 
         <!-- FOOTER -->
-        <footer class="footer footer-custom">
-
-            <div class="container">
-
-                <nav class="navbar navbar-footer-custom navbar-expand">
-
-                    <div class="navbar-nav mr-auto">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-facebook"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-twitter"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-instagram"></a>
-                            </li>
-                        </ul>
-
-                    </div>   
-
-                    <div class="navbar-nav ml-auto">
-
-                        <ul class="navbar-nav">
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Help Us</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">FAQ</a>
-                            </li>
-                        </ul>
-                    </div>    
-
-                </nav>
-
-            </div>
-
-        </footer>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("footer.html");
+        </script>
         <!-- /FOOTER -->
 
     </body>
