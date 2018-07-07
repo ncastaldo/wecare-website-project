@@ -1,24 +1,27 @@
-# README
+# Project for "Hypermedia Applications" course, A.A. 2017/2018
 
-## General info on team and web application
+## Information about the team and the web application
 
 - **Heroku** URL:  https://polimi-hyp-2018-team-10472465.herokuapp.com
 - **Bitbucket** repo URL:  https://bitbucket.org/polimihyp2018team10472465/polimi-hyp-2018-project/src/master/
 - Team administrator:   NICOLA, CASTALDO,   10472465,   polimi-hyp-2018-10472465
 - Team member n.2   :   ROBERT, AMAHIRWE,   10453754,   polimi-hyp-2018-10453754
 
-We worked mainly together, since we did not have any experience with HTML, CSS, JS and we wanted to learn as much as possible. 
+## General description of the project
+- "We Care" is a website for an Association devoted to support children and young adults.
 
+## Division of the work
+- We worked mainly together, since we did not have any experience with HTML, CSS, JS and we wanted to learn as much as possible.
 
 ## Front-end
 
-The client-side languages we used are:
+Client side languages:
 
 - HTML5
 - CSS
 - JavaScript
 
-We took advantage of some external tools:
+External tools:
 
 - CSS - [Bootstrap](https://getbootstrap.com/)
 - CSS - [Animate](https://daneden.github.io/animate.css/)
@@ -27,6 +30,19 @@ We took advantage of some external tools:
 - JS - [Bootstrap](https://getbootstrap.com/)
 
 ## Back-end
+
+Server side languages:
+- JavaScript
+
+External tools:
+
+- [Node.js](https://nodejs.org/it/)
+- [KNEX.JS](https://knexjs.org/)
+- [Lodash](https://lodash.com/)
+- [Express](http://expressjs.com/)
+- [body-parser](https://www.npmjs.com/package/body-parser)
+- [process](https://www.npmjs.com/package/process)
+
 
 ### Server
 In the [index.js](index.js) file there is the **database** initialization, the creation of the **REST endpoints** and the **server** starting procedure. The data files are statically saved in JSON format in the [other/json/](other/json/) folder and, at the start of the server, they are loaded into the database in case the relative tables are not present. Then the server creates the REST endpoints in order to retrieve the data by directly querying the database.
@@ -133,5 +149,7 @@ The pages dynamically load the content they show by performing **AJAX** calls to
 - Accepts: a JSON file containing the information filled in the form of the Contact Us page
 - Usage: [CONTACT US](https://polimi-hyp-2018-team-10472465.herokuapp.com/pages/contactUs.html)
 
-
+## List of the main problems we faced during the development
+- Some issues on the deployment of the app on heroku and its interaction with the PostgreSQL database
+- The dynamic load of multiple elements (such as "services") on the page
 
