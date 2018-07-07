@@ -7,98 +7,32 @@
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
 
         <!-- BOOTSTRAP minified CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-
         <!-- Animate CSS -->
         <link rel="stylesheet" href="../assets/css/animate.min.css">
-
         <!-- Add icon library -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main.css">
-
+        
         <!-- JQUERY minified JS -->
         <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
-
         <!-- BOOTSTRAP minified JS -->
         <script type= "text/javascript" src="../assets/js/bootstrap.min.js"></script>
-
-        <script type= "text/javascript" src="../assets/js/script.js"></script>
 
     </head>
 
     <body>
 
         <!-- HEADER -->
-        <div class="top-content">
-
-            <div class="container">
-
-                <div class="row upper-top-content">
-
-                    <a class="logo-home col-sm-8" href="home.html">
-                        <img src="../assets/img/logo/logo-3.svg">
-                    </a>
-
-                    <a class="btn btn-donate ml-auto col-sm-4" href="#" role="button">DONATE</a>
-
-                </div>
-
-            </div>
-
-            <hr/>
-
-            <div class="container">
-
-                <nav class="navbar navbar-custom navbar-expand-md">   
-
-                    <!-- To have the "3 lines"/"hamburger" button when there are small sizes-->
-                    <button class="navbar-toggler ml-auto custom-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse mr-auto" id="navbarMenu">
-
-                        <ul class="navbar-nav ml-auto">
-
-                            <li class="nav-item">
-                                <a href="home.html" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="whoWeAre.html" class="nav-link">Who we are</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a href="services.html" class="nav-link">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="locations.html" class="nav-link">Locations</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="people.html" class="nav-link">People</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Events</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contactUs.html" class="nav-link">Contact Us</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </nav>
-
-            </div>
-
-        </div>
+        <div id="header"></div>
+        <script>
+            $("#header").load("header.html");
+            $(document).ready(function(){$("#services-item").addClass("active")})
+        </script>
         <!-- /HEADER -->
 
         <!-- MAIN -->
@@ -108,9 +42,8 @@
 
                 <div class="container">
                     <h2 class="animated fadeInUp" style="animation-delay:0.3s;">
-                        <span class="top-background-title SERVICE-NAME"><!-- DYNAMIC HERE -->
-                        </span>
-                    </h2> <!-- DYNAMIC HERE -->
+                        <span class="top-background-title SERVICE-NAME"><!-- DYNAMIC HERE --></span>
+                    </h2>
                 </div>
 
             </div>
@@ -120,7 +53,7 @@
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item"><a href="home.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="services.html">All services</a></li>
-                        <li class="breadcrumb-item active SERVICE-NAME"></li> <!-- DYNAMIC HERE -->
+                        <li class="breadcrumb-item active SERVICE-NAME"><!-- DYNAMIC HERE --></li>
                     </ol>
                 </div>
             </nav>
@@ -147,6 +80,7 @@
                                 </li>
                                 <div class="dropdown-divider"></div>
                                 <li class="nav-item">
+                                    <!-- DYNAMIC HERE -->
                                     <a class="nav-link PEOPLE-LINK">Who in this service?</a>
                                 </li>
                             </ul>
@@ -165,7 +99,7 @@
 
 
                                 <div>
-                                    <div class="SERVICE-DESCRIPTION"></div>
+                                    <div class="SERVICE-DESCRIPTION"><!-- DYNAMIC HERE --></div>
                                 </div>
 
                             </div>
@@ -173,7 +107,7 @@
                             <div class="tab-pane" id="practical-info" role="tabpanel">
 
                                 <h3><span class="h-title">Practical info</span></h3>
-                                <div class="SERVICE-PRACTICAL-INFO"></div>
+                                <div class="SERVICE-PRACTICAL-INFO"><!-- DYNAMIC HERE --></div>
 
                             </div>
 
@@ -183,14 +117,15 @@
                                 <h3 class="mb-3"><span class="h-title">Photogallery</span></h3>
 
                                 <div class="container">
+                                    
                                     <div class="row SERVICE-PHOTOGALLERY">
+                                        <!-- DYNAMIC HERE -->
                                     </div>
-
-
+                                    
                                 </div>
+                                
                             </div>
-
-
+                            
                         </div>
 
 
@@ -203,10 +138,9 @@
                     <div class="ml-1 arrow-down"></div>
                 </a>
 
-
                 <div class="row mt-2 RELATED-LOCATIONS">
 
-                    <!-- AJAX call here -->
+                    <!-- DYNAMIC HERE -->
 
                 </div>
 
@@ -216,54 +150,14 @@
 
             <script src="../assets/js/service.js"></script>
 
-
         </main>
         <!-- /MAIN -->
 
         <!-- FOOTER -->
-        <footer class="footer footer-custom">
-
-            <div class="container">
-
-                <nav class="navbar navbar-footer-custom navbar-expand">
-
-                    <div class="navbar-nav mr-auto">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-facebook"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-twitter"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="fa fa-instagram"></a>
-                            </li>
-                        </ul>
-
-                    </div>   
-
-                    <div class="navbar-nav ml-auto">
-
-                        <ul class="navbar-nav">
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">Help Us</a>
-                            </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link">FAQ</a>
-                            </li>
-                        </ul>
-                    </div>    
-
-                </nav>
-
-            </div>
-
-        </footer>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("footer.html");
+        </script>
         <!-- /FOOTER -->
 
     </body>
