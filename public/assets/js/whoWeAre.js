@@ -3,29 +3,6 @@ let sticky;
 
 $(document).ready(function(){
 
-    sidebar = $(".sidebar");
-
-    sticky = sidebar.offset().top - 17;
-
-    window.onscroll = function() {
-        stickIt();
-        activateNavItem();
-    };
-
-    
-    $(sidebar).attrchange({
-        trackValues: true, // set to true so that the event object is updated with old & new values
-        callback: function(e) {
-            if(e.attributeName == "display") {
-                stickIt();
-                activateNavItem();
-            }
-        }
-
-
-    });
-
-
     window.onresize = function() {
         stickIt();
     };
@@ -37,10 +14,36 @@ $(document).ready(function(){
         error: function (request, error) {
             console.log(request, error);
         },
-        success: function(data){loadJsonWhoWeAreIntoHtml(data);}
+        success: function(data){
+            loadJsonWhoWeAreIntoHtml(data);
+            handleSidebar()
+        }
     });
 
 });
+
+function handleSidebar(){
+    
+    sidebar = $(".sidebar");
+
+    sticky = sidebar.offset().top - 17;
+
+    window.onscroll = function() {
+        stickIt();
+        activateNavItem();
+    };
+
+    $(sidebar).attrchange({
+        trackValues: true, // set to true so that the event object is updated with old & new values
+        callback: function(e) {
+            if(e.attributeName == "display") {
+                stickIt();
+                activateNavItem();
+            }
+        }
+
+    });
+}
 
 
 function stickIt() {
