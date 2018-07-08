@@ -42,6 +42,10 @@
     },
     {
         "locationId" : 5,
+        "serviceId" : 2
+    },
+    {
+        "locationId" : 5,
         "serviceId" : 5
     }
 
